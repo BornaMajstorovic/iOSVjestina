@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		021F6A5E243F76C2003DEFF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021F6A5D243F76C2003DEFF7 /* AppDelegate.swift */; };
-		021F6A60243F76C2003DEFF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021F6A5F243F76C2003DEFF7 /* SceneDelegate.swift */; };
-		021F6A62243F76C2003DEFF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021F6A61243F76C2003DEFF7 /* ViewController.swift */; };
-		021F6A65243F76C2003DEFF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 021F6A63243F76C2003DEFF7 /* Main.storyboard */; };
 		021F6A67243F76C3003DEFF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 021F6A66243F76C3003DEFF7 /* Assets.xcassets */; };
 		021F6A6A243F76C3003DEFF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 021F6A68243F76C3003DEFF7 /* LaunchScreen.storyboard */; };
+		021F6A77243F979C003DEFF7 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021F6A76243F979C003DEFF7 /* Utilities.swift */; };
+		021F6A79243F97AD003DEFF7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021F6A78243F97AD003DEFF7 /* Constants.swift */; };
+		0240BF3C244070FC0097D60E /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0240BF3A244070FC0097D60E /* InitialViewController.swift */; };
+		0240BF3D244070FC0097D60E /* InitialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0240BF3B244070FC0097D60E /* InitialViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		021F6A5A243F76C2003DEFF7 /* QuizzApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizzApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		021F6A5D243F76C2003DEFF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		021F6A5F243F76C2003DEFF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		021F6A61243F76C2003DEFF7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		021F6A64243F76C2003DEFF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		021F6A66243F76C3003DEFF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		021F6A69243F76C3003DEFF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		021F6A6B243F76C3003DEFF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		021F6A76243F979C003DEFF7 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		021F6A78243F97AD003DEFF7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0240BF3A244070FC0097D60E /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		0240BF3B244070FC0097D60E /* InitialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InitialViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,56 @@
 		021F6A5C243F76C2003DEFF7 /* QuizzApp */ = {
 			isa = PBXGroup;
 			children = (
+				021F6A71243F7C13003DEFF7 /* Resources */,
+				0240BF3E244071D00097D60E /* Services */,
+				0240BF3F244071DF0097D60E /* Models */,
+				0240BF40244071F60097D60E /* Views */,
+				021F6A75243F8788003DEFF7 /* ViewControllers */,
+			);
+			path = QuizzApp;
+			sourceTree = "<group>";
+		};
+		021F6A71243F7C13003DEFF7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				021F6A5D243F76C2003DEFF7 /* AppDelegate.swift */,
-				021F6A5F243F76C2003DEFF7 /* SceneDelegate.swift */,
-				021F6A61243F76C2003DEFF7 /* ViewController.swift */,
-				021F6A63243F76C2003DEFF7 /* Main.storyboard */,
 				021F6A66243F76C3003DEFF7 /* Assets.xcassets */,
 				021F6A68243F76C3003DEFF7 /* LaunchScreen.storyboard */,
 				021F6A6B243F76C3003DEFF7 /* Info.plist */,
+				021F6A76243F979C003DEFF7 /* Utilities.swift */,
+				021F6A78243F97AD003DEFF7 /* Constants.swift */,
 			);
-			path = QuizzApp;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		021F6A75243F8788003DEFF7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0240BF3A244070FC0097D60E /* InitialViewController.swift */,
+				0240BF3B244070FC0097D60E /* InitialViewController.xib */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0240BF3E244071D00097D60E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0240BF3F244071DF0097D60E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0240BF40244071F60097D60E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +170,7 @@
 			files = (
 				021F6A6A243F76C3003DEFF7 /* LaunchScreen.storyboard in Resources */,
 				021F6A67243F76C3003DEFF7 /* Assets.xcassets in Resources */,
-				021F6A65243F76C2003DEFF7 /* Main.storyboard in Resources */,
+				0240BF3D244070FC0097D60E /* InitialViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +181,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				021F6A62243F76C2003DEFF7 /* ViewController.swift in Sources */,
+				0240BF3C244070FC0097D60E /* InitialViewController.swift in Sources */,
+				021F6A79243F97AD003DEFF7 /* Constants.swift in Sources */,
 				021F6A5E243F76C2003DEFF7 /* AppDelegate.swift in Sources */,
-				021F6A60243F76C2003DEFF7 /* SceneDelegate.swift in Sources */,
+				021F6A77243F979C003DEFF7 /* Utilities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		021F6A63243F76C2003DEFF7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				021F6A64243F76C2003DEFF7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		021F6A68243F76C3003DEFF7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -216,7 +252,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +306,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -286,7 +322,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SY694AWQB9;
-				INFOPLIST_FILE = QuizzApp/Info.plist;
+				INFOPLIST_FILE = QuizzApp/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +340,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SY694AWQB9;
-				INFOPLIST_FILE = QuizzApp/Info.plist;
+				INFOPLIST_FILE = QuizzApp/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
