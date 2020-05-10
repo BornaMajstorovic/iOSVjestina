@@ -23,14 +23,13 @@ final class LoginViewController: UIViewController {
     // MARK: Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        Utilites.styleTextField(textfield: usernameTF)
-        Utilites.styleTextField(textfield: passwordTF)
-        Utilites.styleButton(button: loginButton)
+        setUpView()
     }
     
     // MARK: Actions
     @IBAction func loginButtonTapped(_ sender: UIButton) {
-           loginAndNavigateToInital()
+        loginAndNavigateToInital()
+      
           
     }
     
@@ -63,6 +62,13 @@ final class LoginViewController: UIViewController {
     private func navigateToInital(){
         let initalViewController = InitialViewController()
         navigationController?.pushViewController(initalViewController, animated: true)
-        
     }
+    
+    private func setUpView(){
+        Utilites.styleTextField(textfield: usernameTF)
+        Utilites.styleTextField(textfield: passwordTF)
+        Utilites.styleButton(button: loginButton)
+    }
+    
+ 
 }

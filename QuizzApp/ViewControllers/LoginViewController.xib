@@ -39,9 +39,10 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="jmY-3Z-MIY"/>
                             </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
                             <state key="normal" title="Login"/>
                             <connections>
-                                <action selector="loginButtonTapped:" destination="-1" eventType="touchUpInside" id="CrA-gJ-GhG"/>
+                                <action selector="loginButtonTapped:" destination="-1" eventType="touchUpInside" id="NJ6-CE-lF2"/>
                             </connections>
                         </button>
                     </subviews>
@@ -59,7 +60,7 @@
                 <constraint firstItem="wVr-N1-6XJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="Tcb-2X-h1F"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="-336" y="163"/>
+            <point key="canvasLocation" x="119" y="169"/>
         </view>
     </objects>
 </document>

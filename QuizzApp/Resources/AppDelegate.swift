@@ -23,10 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationController.navigationBar.isHidden = true
        
         
-        //let vc = InitialViewController()
-        //window?.rootViewController = vc
+//        let vc = InitialViewController()
+//        window?.rootViewController = vc
         
         window?.rootViewController = loginViewController
+        
         window?.makeKeyAndVisible()
         
         return true

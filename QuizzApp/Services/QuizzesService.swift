@@ -66,21 +66,6 @@ class QuizzesService {
 //
 //    }
 //
-    func fetchQuizImage(urlstring: String, completion: @escaping ((UIImage?) -> Void)){
-        if let url = URL(string: urlstring) {
-            let request = URLRequest(url: url)
-            let dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
-                if let data = data {
-                    let image = UIImage(data: data)
-                    completion(image)
-                } else {
-                    completion(nil)
-                }
-            }
-            dataTask.resume()
-        } else {
-            completion(nil)
-        }
-}
+
 
 }
