@@ -18,14 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        //let loginViewController = LoginViewController()
-      //  let navigationController = UINavigationController(rootViewController: loginViewController)
-        //navigationController.navigationBar.isHidden = true
+        let loginViewController = LoginViewController()
+        let navigationController = UINavigationController(rootViewController: loginViewController)
+        navigationController.navigationBar.isHidden = true
+       
         
-        let vc = InitialViewController()
+        //let vc = InitialViewController()
+        //window?.rootViewController = vc
         
-        window?.rootViewController = vc
-        
+        window?.rootViewController = loginViewController
         window?.makeKeyAndVisible()
         
         return true
@@ -34,4 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-
+// MARK: Outlets
+// MARK: Properties
+// MARK: Lifecycle methods
+// MARK: Actions
+// MARK: Class methods

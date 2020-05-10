@@ -8,33 +8,35 @@
 
 import UIKit
 
-class InitialViewController: UIViewController {
+final class InitialViewController: UIViewController {
     
-    @IBOutlet weak var getQuizButton: UIButton!
-    @IBOutlet weak var errorLabel: UILabel!
-    @IBOutlet weak var funFactLabel: UILabel!
-    @IBOutlet weak var quizImagView: UIImageView!
-    @IBOutlet weak var quizTitleLabel: UILabel!
-    @IBOutlet weak var questionContainer: UIView!
+    // MARK: Outlets
+    @IBOutlet private weak var getQuizButton: UIButton!
+    @IBOutlet private weak var errorLabel: UILabel!
+    @IBOutlet private weak var funFactLabel: UILabel!
+    @IBOutlet private weak var quizImagView: UIImageView!
+    @IBOutlet private weak var quizTitleLabel: UILabel!
+    @IBOutlet private weak var questionContainer: UIView!
     
-    var allQuizzes: [QuizModel]?
+    // MARK: Properties
+    private var allQuizzes: [QuizModel]?
     
     
-    
-    @IBAction func getQuizTapped(_ sender: UIButton) {
-        fetchQuizes()
-    }
-    
+    // MARK: Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         errorLabel.isHidden = true
         quizImagView.isHidden = true
         quizTitleLabel.isHidden = true
-        
-        
     }
     
-    func fetchQuizes() {
+    // MARK: Actions
+    @IBAction func getQuizTapped(_ sender: UIButton) {
+           fetchQuizes()
+    }
+    
+    // MARK: Class methods
+    private func fetchQuizes() {
         let urlString = "https://iosquiz.herokuapp.com/api/quizzes"
         
         let quizService = QuizzesService()

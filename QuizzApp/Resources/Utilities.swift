@@ -29,6 +29,12 @@ class Utilites {
         
     }
     
+    static func styleButton(button: UIButton) {
+         button.backgroundColor = #colorLiteral(red: 0.2117647059, green: 0.2705882353, blue: 0.4588235294, alpha: 0.5960776969)
+         button.layer.cornerRadius = 20
+         button.tintColor = #colorLiteral(red: 0.5328530073, green: 0.402020514, blue: 0.6997897029, alpha: 1)
+     }
+    
     static func styleButtonDisabled(button: UIButton) {
    
         button.backgroundColor = #colorLiteral(red: 0.2117647059, green: 0.2705882353, blue: 0.4588235294, alpha: 0.5960776969)
