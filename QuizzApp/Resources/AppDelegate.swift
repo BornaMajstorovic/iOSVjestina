@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let vc = InitialViewController()
 //        window?.rootViewController = vc
         
-        window?.rootViewController = loginViewController
+        window?.rootViewController = navigationController
         
         window?.makeKeyAndVisible()
         

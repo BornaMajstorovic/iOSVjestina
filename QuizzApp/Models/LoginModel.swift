@@ -9,11 +9,18 @@
 import Foundation
 
 struct LoginModel: Decodable {
-    var token: String?
-    var userId: Int?
+    var token: String
+    var userId: Int
     
     enum CodingKeys: String, CodingKey {
         case token
         case userId = "user_id"
+    }
+    
+    init(from decoder: Decoder) throws{
+        let container = try! decoder.container(keyedBy: CodingKeys.self)
+        self.token = try! container.decode(String.self, forKey: CodingKeys.token)
+        self.userId = try! container.decode(Int.self, forKey: CodingKeys.userId)
+        
     }
 }

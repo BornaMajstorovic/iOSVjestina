@@ -29,8 +29,6 @@ final class LoginViewController: UIViewController {
     // MARK: Actions
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         loginAndNavigateToInital()
-      
-          
     }
     
     
@@ -48,7 +46,7 @@ final class LoginViewController: UIViewController {
                     self.saveCredentials(loginModel: model)
                     self.navigateToInital()
                 case .failure(let err):
-                    print("Failed to fetch token:", err)
+                    print("Fail:", err)
                 }
             }
         }
@@ -60,7 +58,7 @@ final class LoginViewController: UIViewController {
        }
     
     private func navigateToInital(){
-        let initalViewController = InitialViewController()
+        let initalViewController = InitialViewController(nibName: "InitialViewController", bundle: nil)
         navigationController?.pushViewController(initalViewController, animated: true)
     }
     
