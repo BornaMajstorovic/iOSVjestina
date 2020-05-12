@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="QuizzApp" customModuleProvider="target">
+            <connections>
+                <outlet property="loginButton" destination="Q1a-K7-ZS7" id="YTD-WI-NXe"/>
+                <outlet property="passwordTF" destination="LaO-0a-rey" id="Bn9-h9-ke3"/>
+                <outlet property="usernameTF" destination="sIc-wA-TGM" id="kTa-pH-bFk"/>
+                <outlet property="view" destination="iN0-l3-epB" id="xTo-Sd-b8o"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="wVr-N1-6XJ">
+                    <rect key="frame" x="40" y="124" width="334" height="230"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sIc-wA-TGM">
+                            <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LaO-0a-rey">
+                            <rect key="frame" x="0.0" y="90" width="334" height="50"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q1a-K7-ZS7">
+                            <rect key="frame" x="0.0" y="180" width="334" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="jmY-3Z-MIY"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                            <state key="normal" title="Login"/>
+                            <connections>
+                                <action selector="loginButtonTapped:" destination="-1" eventType="touchUpInside" id="NJ6-CE-lF2"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Q1a-K7-ZS7" firstAttribute="height" secondItem="LaO-0a-rey" secondAttribute="height" id="1T2-sI-vRJ"/>
+                        <constraint firstAttribute="bottom" secondItem="Q1a-K7-ZS7" secondAttribute="bottom" id="8ge-tc-5P3"/>
+                        <constraint firstItem="Q1a-K7-ZS7" firstAttribute="height" secondItem="sIc-wA-TGM" secondAttribute="height" id="LUA-xc-1fm"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="wVr-N1-6XJ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="80" id="4nh-Kd-bUC"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="wVr-N1-6XJ" secondAttribute="trailing" constant="40" id="Sd8-Op-Eyd"/>
+                <constraint firstItem="wVr-N1-6XJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="Tcb-2X-h1F"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="119" y="169"/>
+        </view>
+    </objects>
+</document>
