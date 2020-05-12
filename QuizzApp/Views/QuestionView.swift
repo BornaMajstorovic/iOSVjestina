@@ -22,6 +22,7 @@ final class QuestionView: UIView {
     
     
     // MARK: Actions
+    // TODO: popravit correctAnswer...ovo je uzasno rjesenje
     @IBAction func tappedBtn1(_ sender: UIButton) {
         if correctAnswer == 1 {
             answerButton1.backgroundColor = .green
