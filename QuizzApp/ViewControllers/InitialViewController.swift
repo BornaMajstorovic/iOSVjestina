@@ -36,16 +36,16 @@ final class InitialViewController: UIViewController {
     
     // MARK: Class methods
     private func fetchQuizes() {
-        let urlString = "https://iosquiz.herokuapp.com/api/quizzes"
+        
         
         let quizService = QuizzesService()
         
-        quizService.fetchQuizzes(urlString: urlString){(result) in
+        quizService.fetchQuizzes(){(result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let model):
                     self.allQuizzes = model.quizzes
-                    
+
                     //NBA hof
                     let questions = model.quizzes.flatMap {quizModel in
                         quizModel.questions
@@ -64,10 +64,10 @@ final class InitialViewController: UIViewController {
                     //questionView setup
                     let question = quiz.questions.randomElement()
                     
-                    if let questionView = Bundle.main.loadNibNamed("QuestionView", owner: nil, options: nil)?.first as? QuestionView {
-                        questionView.configureWith(model: question)
-                        self.questionContainer.addSubview(questionView)
-                    }
+//                    if let questionView = Bundle.main.loadNibNamed("QuestionView", owner: nil, options: nil)?.first as? QuestionView {
+//                        questionView.configureWith(model: question)
+//                        self.questionContainer.addSubview(questionView)
+//                    }
                     
                     
                 case .failure(let err):
@@ -89,7 +89,7 @@ final class InitialViewController: UIViewController {
         self.quizTitleLabel.isHidden = false
         
         let category = quiz.category
-        let quizzCategory = Catergory(rawValue: category)
+        let quizzCategory = Category(rawValue: category)
         
         self.quizImagView.backgroundColor = quizzCategory?.color
         self.quizTitleLabel.backgroundColor = quizzCategory?.color

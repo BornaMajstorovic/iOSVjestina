@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol QuestionViewDelegate: class {
+    func answeardQuestions(isCorrect: Bool)
+}
+
+
 final class QuestionView: UIView {
     
     // MARK: Outlets
@@ -19,7 +24,15 @@ final class QuestionView: UIView {
     
     // MARK: Properties
     var correctAnswer: Int?
+    weak var delegat: QuestionViewDelegate?
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: Actions
     // TODO: popravit correctAnswer...ovo je uzasno rjesenje
@@ -54,16 +67,16 @@ final class QuestionView: UIView {
     
     
     // MARK: Class methods
-    func configureWith(model: QuestionModel?) {
-        guard   let model = model,
-                let question = model.question,
-                let answers = model.answers else{return}
+    func configureWith(model: QuestionModel) {
+        let model = model
+        let question = model.question
+        let answers = model.answers
         
         questionLabel.text = question
-        answerButton1.setTitle(answers[0], for: .normal)
-        answerButton2.setTitle(answers[1], for: .normal)
-        answerButton3.setTitle(answers[2], for: .normal)
-        answerButton4.setTitle(answers[3], for: .normal)
+        answerButton1.setTitle(answers?[0], for: .normal)
+        answerButton2.setTitle(answers?[1], for: .normal)
+        answerButton3.setTitle(answers?[2], for: .normal)
+        answerButton4.setTitle(answers?[3], for: .normal)
         
         correctAnswer = model.correctAnswer
         

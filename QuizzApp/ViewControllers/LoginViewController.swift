@@ -17,8 +17,7 @@ final class LoginViewController: UIViewController {
     
     // MARK: Properties
     private var  loginModel: LoginModel?
-    
-    
+
     
     // MARK: Lifecycle methods
     override func viewDidLoad() {
@@ -44,7 +43,7 @@ final class LoginViewController: UIViewController {
                 case .success(let model):
                     self.loginModel = model
                     self.saveCredentials(loginModel: model)
-                    self.navigateToInital()
+                    self.navigateToQuizzTable()
                 case .failure(let err):
                     print("Fail:", err)
                 }
@@ -57,9 +56,9 @@ final class LoginViewController: UIViewController {
            UserDefaults.standard.set(loginModel.token, forKey: "token")
        }
     
-    private func navigateToInital(){
-        let initalViewController = InitialViewController(nibName: "InitialViewController", bundle: nil)
-        navigationController?.pushViewController(initalViewController, animated: true)
+    private func navigateToQuizzTable(){
+        let quizTableViewController = QuizTableViewController(nibName: "QuizTableViewController", bundle: nil)
+        navigationController?.pushViewController(quizTableViewController, animated: true)
     }
     
     private func setUpView(){

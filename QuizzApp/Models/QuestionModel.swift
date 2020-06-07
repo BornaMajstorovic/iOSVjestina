@@ -8,28 +8,6 @@
 
 import Foundation
 
-//class QuestionModel {
-//    let id: Int
-//    let question: String
-//    let answers: [String]
-//    let correctAnswer: Int
-//
-//    init?(json: Any) {
-//
-//        guard   let questionMap = json as? [String: Any],
-//                let idJ = questionMap["id"] as? Int,
-//                let questionJ = questionMap["question"] as? String,
-//                let ansersJ = questionMap["answers"] as? [String],
-//                let correctAnswerJ = questionMap["correct_answer"] as? Int
-//                else { return nil }
-//        id = idJ
-//        question = questionJ
-//        answers = ansersJ
-//        correctAnswer = correctAnswerJ
-//    }
-//
-//}
-
 struct QuestionModel: Decodable{
     let id: Int?
     let question: String?

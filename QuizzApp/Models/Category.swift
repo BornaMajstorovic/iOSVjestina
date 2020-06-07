@@ -14,7 +14,7 @@ enum Category: String, CaseIterable {
     case SCIENCE
 }
 
-extension Catergory {
+extension Category {
     var color : UIColor {
         get {
             switch self {

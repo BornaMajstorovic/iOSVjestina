@@ -15,7 +15,5 @@ struct LoginModel: Decodable {
     enum CodingKeys: String, CodingKey {
         case token
         case userId = "user_id"
-    }
-    
-   
+    }  
 }

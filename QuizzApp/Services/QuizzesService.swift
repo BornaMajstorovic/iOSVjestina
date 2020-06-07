@@ -11,8 +11,9 @@ import UIKit
 
 class QuizzesService {
     
-    func fetchQuizzes(urlString: String, completion: @escaping ((Result<AllQuizzes, Error>)->Void)){
+    func fetchQuizzes(completion: @escaping ((Result<AllQuizzes, Error>)->Void)){
         
+        let urlString = "https://iosquiz.herokuapp.com/api/quizzes"
         guard let url = URL(string: urlString) else {return}
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -27,45 +28,48 @@ class QuizzesService {
                 }
             }
             if let err = err {
-                        completion(.failure(err))
-                        return
+                completion(.failure(err))
+                return
             }
         }.resume()
         
     }
     
-    
+    func sendResult(quizId: Int, time: Double, numOfCorrect: Int, completion: @escaping ((HTTPStatus?) -> Void)){
+        let urlString = "https://iosquiz.herokuapp.com/api/result"
+        
+        guard let url = URL(string: urlString) else {return}
+        guard let token = UserDefaults.standard.string(forKey: "token") else {return}
+        guard let userId = UserDefaults.standard.string(forKey: "user") else {return}
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+            
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue(token, forHTTPHeaderField: "Authorization")
+        
+        let parameters: [String: Any] = [
+            "quiz_id": quizId,
+            "user_id": userId,
+            "time": time,
+            "no_of_correct": numOfCorrect
+        ]
+        
+        request.httpBody = try? JSONSerialization.data(withJSONObject: parameters)
+        
+        URLSession.shared.dataTask(with: request){(data,response,err) in
+            if let res = response as? HTTPURLResponse {
+                completion(HTTPStatus(rawValue: res.statusCode))
+            } else {
+                completion(nil)
+            }
+        }.resume()
+    }
+}
 
-
-// TODO: probat i ovo natjerat da radi
-//    func fetchQuizzes(urlString: String, completion: @escaping ((QuizModel?)->Void)){
-//
-//        if let url = URL(string: urlString) {
-//            var request = URLRequest(url: url)
-
-//            let dataTask = URLSession.shared.dataTask(with: request) { (data,response,error) in
-//                if let data = data {
-//                    do {
-//                        let json = try JSONSerialization.jsonObject(with: data, options: [])
-//                        let quiz = QuizModel(json: json)
-//                        completion(quiz)
-//                    }
-//                    catch{
-//                        completion(nil)
-//                    }
-//
-//                } else {
-//                    completion(nil)
-//                }
-//
-//            }
-//            dataTask.resume()
-//        } else {
-//            completion(nil)
-//        }
-//
-//    }
-//
-
-
+enum HTTPStatus: Int {
+    case OK = 200
+    case BADREQUEST = 400
+    case UNAUTHORIZED = 401
+    case FORBIDDEN = 403
+    case NOTFOUND = 404
 }
