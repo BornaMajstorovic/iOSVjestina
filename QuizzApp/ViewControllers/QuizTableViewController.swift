@@ -18,18 +18,28 @@ class QuizTableViewController: UIViewController {
     private var refreshControl: UIRefreshControl!
     private let cellReuseIdentifier = "cellReuseIdentifier"
     
-    convenience init(viewModel: QuizzesViewModel){
-        self.init()
-        self.viewModel = viewModel
-    }
     
     // MARK: Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel?.fetchQuizzes()
-        self.refresh()
         setUpTableView()
+        
+        viewModel = QuizzesViewModel()
+        viewModel?.fetchQuizzes(completion: { (result) in
+            DispatchQueue.main.async {
+                switch result{
+                case .success(let model):
+                    self.viewModel?.quizzes = model.quizzes
+                    self.refresh()
+                case .failure(let err):
+                    print("Failed to fetc", err)
+                }
+            }
+        })
+        
+        
+        
     }
     
     
@@ -82,7 +92,11 @@ extension QuizTableViewController: UITableViewDelegate {
         navigationController?.pushViewController(quizViewController, animated: true)
     }//na tap cella prijedi na quizvc
     
-    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let title = "str"
+        return title
+    }
+   
 }
 
 extension QuizTableViewController: UITableViewDataSource {
@@ -104,7 +118,8 @@ extension QuizTableViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let category = Category.allCases[section]
-        return self.viewModel?.numberOfQuizzes(category: category) ?? 0
+        let a = self.viewModel?.numberOfQuizzes(category: category) ?? 0
+        return a
     } //broj kvizova u kategoriji
     
    

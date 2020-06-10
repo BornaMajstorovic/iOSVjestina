@@ -133,10 +133,10 @@
 		021F6A75243F8788003DEFF7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				0231157A24670B6A00421E7E /* LoginViewController.swift */,
-				0231157824670B4700421E7E /* LoginViewController.xib */,
 				0240BF3A244070FC0097D60E /* InitialViewController.swift */,
 				0240BF3B244070FC0097D60E /* InitialViewController.xib */,
+				0231157A24670B6A00421E7E /* LoginViewController.swift */,
+				0231157824670B4700421E7E /* LoginViewController.xib */,
 				026A5C38248171F0007D37CE /* QuizTableViewController.swift */,
 				026A5C39248171F0007D37CE /* QuizTableViewController.xib */,
 				0274E67B24865525004CBD85 /* QuizViewController.swift */,

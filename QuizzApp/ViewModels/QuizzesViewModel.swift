@@ -9,21 +9,13 @@
 import Foundation
 
 class QuizzesViewModel {
-    private var quizzes: AllQuizzes?
+    var quizzes: [QuizModel]?
     
-    func fetchQuizzes(){
+    func fetchQuizzes(completion: @escaping ((Result<AllQuizzes, Error>)->Void)){
         
         let quizService = QuizzesService()
-        quizService.fetchQuizzes() { [weak self](result) in
-            DispatchQueue.main.async {
-                switch result{
-                case .success(let model):
-                    self?.quizzes?.quizzes = model.quizzes
-                case .failure(let err):
-                    print("Failed to fetc", err)
-                }
-            }
-            
+        quizService.fetchQuizzes() { (result) in
+            completion(result)
         }
         
     }
@@ -33,7 +25,7 @@ class QuizzesViewModel {
     }
     
     func quizzesByCategory(category: Category) -> [QuizModel]? {
-        return quizzes?.quizzes.filter({ (quiz) -> Bool in
+        return quizzes?.filter({ (quiz) -> Bool in
             return quiz.category == category.rawValue
         })
     }
@@ -49,4 +41,6 @@ class QuizzesViewModel {
         guard let quizzesByCategory = quizzesByCategory(category: category)  else {return nil}
         return QuizCellModel(quiz: quizzesByCategory[indexpath.row])
     }
+    
+    
 }

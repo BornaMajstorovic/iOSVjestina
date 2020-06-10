@@ -21,6 +21,7 @@ class QuizzHeaderView: UIView {
         self.init(frame: CGRect.zero)
         backgroundColor = color
         titleLabel = UILabel()
+        titleLabel.text = title
         titleLabel.font = UIFont.systemFont(ofSize: 14)
         titleLabel.textColor = UIColor.darkGray
         self.addSubview(titleLabel)
