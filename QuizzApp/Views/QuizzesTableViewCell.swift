@@ -24,7 +24,6 @@ class QuizzesTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -34,7 +33,7 @@ class QuizzesTableViewCell: UITableViewCell {
         quizImage = nil
         
     }
-    
+    // kingfisher ponekad nakon refresha crasha sa nilom
     func configure(withQuizz quiz: QuizCellModel){
         quizzTitle.text = quiz.title
         quizDescription.text = quiz.description

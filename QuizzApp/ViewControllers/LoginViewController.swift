@@ -60,7 +60,7 @@ final class LoginViewController: UIViewController {
         let quizTableViewController = QuizTableViewController(nibName: "QuizTableViewController", bundle: nil)
         navigationController?.pushViewController(quizTableViewController, animated: true)
     }
-    
+    //TODO: prebacit metode u ekstenziju buttona/textfielda
     private func setUpView(){
         Utilites.styleTextField(textfield: usernameTF)
         Utilites.styleTextField(textfield: passwordTF)

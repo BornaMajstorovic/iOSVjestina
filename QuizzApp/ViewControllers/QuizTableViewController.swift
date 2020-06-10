@@ -24,21 +24,7 @@ class QuizTableViewController: UIViewController {
         super.viewDidLoad()
         
         setUpTableView()
-        
-        viewModel = QuizzesViewModel()
-        viewModel?.fetchQuizzes(completion: { (result) in
-            DispatchQueue.main.async {
-                switch result{
-                case .success(let model):
-                    self.viewModel?.quizzes = model.quizzes
-                    self.refresh()
-                case .failure(let err):
-                    print("Failed to fetc", err)
-                }
-            }
-        })
-        
-        
+        setUpViewModel()
         
     }
     
@@ -60,6 +46,21 @@ class QuizTableViewController: UIViewController {
         let tableFooterView = QuizzFooterView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50))
         tableView.tableFooterView = tableFooterView
         
+    }
+    
+    func setUpViewModel()  {
+        viewModel = QuizzesViewModel()
+        viewModel?.fetchQuizzes(completion: { (result) in
+            DispatchQueue.main.async {
+                switch result{
+                case .success(let model):
+                    self.viewModel?.quizzes = model.quizzes
+                    self.refresh()
+                case .failure(let err):
+                    print("Failed to fetc", err)
+                }
+            }
+        })
     }
     
     @objc func refresh() {
@@ -92,10 +93,7 @@ extension QuizTableViewController: UITableViewDelegate {
         navigationController?.pushViewController(quizViewController, animated: true)
     }//na tap cella prijedi na quizvc
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let title = "str"
-        return title
-    }
+    
    
 }
 
@@ -118,8 +116,7 @@ extension QuizTableViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let category = Category.allCases[section]
-        let a = self.viewModel?.numberOfQuizzes(category: category) ?? 0
-        return a
+        return self.viewModel?.numberOfQuizzes(category: category) ?? 0
     } //broj kvizova u kategoriji
     
    
