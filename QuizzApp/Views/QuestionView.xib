@@ -85,7 +85,7 @@
                 <outlet property="answerButton4" destination="0f7-hP-l4r" id="8d0-4c-maE"/>
                 <outlet property="questionLabel" destination="9CZ-q3-aMF" id="FdE-TN-iO0"/>
             </connections>
-            <point key="canvasLocation" x="186" y="-14"/>
+            <point key="canvasLocation" x="-299" y="38"/>
         </view>
     </objects>
 </document>

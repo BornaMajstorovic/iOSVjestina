@@ -12,7 +12,6 @@ class QuizzesViewModel {
     var quizzes: [QuizModel]?
     
     func fetchQuizzes(completion: @escaping ((Result<AllQuizzes, Error>)->Void)){
-        
         let quizService = QuizzesService()
         quizService.fetchQuizzes() { (result) in
             completion(result)

@@ -32,8 +32,9 @@ class QuizzFooterView: UIView {
     @objc func logoutButtonTapped(_ sender: UIButton) {
         UserDefaults.standard.removeObject(forKey: "token")
         UserDefaults.standard.removeObject(forKey: "userId")
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.window!.rootViewController = LoginViewController()
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate{
+            appDelegate.window!.rootViewController = LoginViewController()
+        }
     }
     
     

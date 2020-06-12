@@ -24,9 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             showLoginVC()
         }
-        
     
-        
         return true
     }
     

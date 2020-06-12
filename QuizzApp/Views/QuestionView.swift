@@ -69,16 +69,15 @@ final class QuestionView: UIView {
     
     // MARK: Class methods
     func configureWith(model: QuestionModel) {
-        let model = model
         guard
             let question = model.question,
             let answers = model.answers else {return}
         
-        questionLabel.text = question
-        answerButton1.setTitle(answers[0], for: .normal)
-        answerButton2.setTitle(answers[1], for: .normal)
-        answerButton3.setTitle(answers[2], for: .normal)
-        answerButton4.setTitle(answers[3], for: .normal)
+        questionLabel?.text = question
+        answerButton1?.setTitle(answers[0], for: .normal)
+        answerButton2?.setTitle(answers[1], for: .normal)
+        answerButton3?.setTitle(answers[2], for: .normal)
+        answerButton4?.setTitle(answers[3], for: .normal)
         
         correctAnswer = model.correctAnswer
     

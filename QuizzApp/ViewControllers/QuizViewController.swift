@@ -82,10 +82,6 @@ class QuizViewController: UIViewController {
             scroolView.addSubview(questionView)
         }
     }
-    
-    
-    
-
 }
 extension QuizViewController: QuestionViewDelegate {
     func answeardQuestions(isCorrect: Bool) {
