@@ -22,7 +22,7 @@ class QuizTableViewController: UIViewController {
     // MARK: Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationItem.title = "Quizzes"
         setUpTableView()
         setUpViewModel()
         

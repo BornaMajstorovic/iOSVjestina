@@ -11,9 +11,10 @@ import UIKit
 
 class QuizzesService {
     
+   
     func fetchQuizzes(completion: @escaping ((Result<AllQuizzes, Error>)->Void)){
         
-        let urlString = "https://iosquiz.herokuapp.com/api/quizzes"
+        let urlString = Constants.baseUrl + "/quizzes"
         guard let url = URL(string: urlString) else {return}
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -35,8 +36,30 @@ class QuizzesService {
         
     }
     
+    func fetchScores(quizId: Int, completion: @escaping ((Result<AllScores, Error>)->Void)){
+        
+        let urlString = Constants.baseUrl + "/score?quiz_id=\(quizId)"
+        guard let url = URL(string: urlString) else {return}
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        URLSession.shared.dataTask(with: request){ (data,response,err) in
+            if let data = data {
+                do {
+                    let model = try JSONDecoder().decode(AllScores.self, from: data)
+                    completion(.success(model))
+                } catch let decodeErr {
+                    completion(.failure(decodeErr))
+                    return
+                }
+            }
+            
+        }.resume()
+        
+    }
+    
     func sendResult(quizId: Int, time: Double, numOfCorrect: Int, completion: @escaping ((HTTPStatus?) -> Void)){
-        let urlString = "https://iosquiz.herokuapp.com/api/result"
+        let urlString = Constants.baseUrl + "/result"
         
         guard let url = URL(string: urlString) else {return}
         guard let token = UserDefaults.standard.string(forKey: "token") else {return}
@@ -52,7 +75,7 @@ class QuizzesService {
             "user_id": userId,
             "time": time,
             "no_of_correct": numOfCorrect
-        ]
+        ]//isto odvojit u api constants
         
         request.httpBody = try? JSONSerialization.data(withJSONObject: parameters)
         

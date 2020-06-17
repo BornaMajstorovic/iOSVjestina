@@ -64,10 +64,10 @@ final class InitialViewController: UIViewController {
                     //questionView setup
                     let question = quiz.questions.randomElement()
                     
-//                    if let questionView = Bundle.main.loadNibNamed("QuestionView", owner: nil, options: nil)?.first as? QuestionView {
-//                        questionView.configureWith(model: question)
-//                        self.questionContainer.addSubview(questionView)
-//                    }
+                    if let questionView = Bundle.main.loadNibNamed("QuestionView", owner: nil, options: nil)?.first as? QuestionView, let question = question {
+                        questionView.configureWith(model: question)
+                        self.questionContainer.addSubview(questionView)
+                    }
                     
                     
                 case .failure(let err):
@@ -102,7 +102,7 @@ final class InitialViewController: UIViewController {
     func setUpFirstView(){
         errorLabel.isHidden = true
         quizTitleLabel.isHidden = true
-        Utilites.styleButton(button: getQuizButton)
+        UIButton.styleButton(button: getQuizButton)
     }
     
 }

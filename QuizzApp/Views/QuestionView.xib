@@ -11,7 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestionView" customModule="QuizzApp" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="QuestionView" customModule="QuizzApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="300" height="250"/>
+            <rect key="frame" x="0.0" y="0.0" width="300" height="270"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="1kJ-Bq-7J6">
@@ -85,7 +85,7 @@
                 <outlet property="answerButton4" destination="0f7-hP-l4r" id="8d0-4c-maE"/>
                 <outlet property="questionLabel" destination="9CZ-q3-aMF" id="FdE-TN-iO0"/>
             </connections>
-            <point key="canvasLocation" x="-299" y="38"/>
+            <point key="canvasLocation" x="-562.31884057971024" y="14.732142857142856"/>
         </view>
     </objects>
 </document>

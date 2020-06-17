@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ScoreTableViewCell" customModule="QuizzApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mi-ll-FLv">
+                        <rect key="frame" x="10" y="10" width="42" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Cf-wO-AOo">
+                        <rect key="frame" x="82" y="10" width="88" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVm-9v-ywl">
+                        <rect key="frame" x="198" y="10" width="42" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="8Cf-wO-AOo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="0dp-aR-Jry"/>
+                    <constraint firstAttribute="bottom" secondItem="1mi-ll-FLv" secondAttribute="bottom" constant="10" id="2zU-SR-RZy"/>
+                    <constraint firstItem="1mi-ll-FLv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="33f-Bv-xd4"/>
+                    <constraint firstAttribute="trailing" secondItem="OVm-9v-ywl" secondAttribute="trailing" constant="80" id="7YT-0x-isG"/>
+                    <constraint firstAttribute="bottom" secondItem="8Cf-wO-AOo" secondAttribute="bottom" constant="10" id="Hcq-yE-F9w"/>
+                    <constraint firstItem="8Cf-wO-AOo" firstAttribute="leading" secondItem="1mi-ll-FLv" secondAttribute="trailing" constant="30" id="Put-4A-h2u"/>
+                    <constraint firstItem="1mi-ll-FLv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="RdA-5l-HLx"/>
+                    <constraint firstAttribute="bottom" secondItem="OVm-9v-ywl" secondAttribute="bottom" constant="10" id="jwm-wQ-dFW"/>
+                    <constraint firstItem="OVm-9v-ywl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="mvJ-S2-idx"/>
+                </constraints>
+            </tableViewCellContentView>
+            <accessibility key="accessibilityConfiguration" identifier="scoreCellReuseIdentifier"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="placeLabel" destination="1mi-ll-FLv" id="YiE-Y5-P3Q"/>
+                <outlet property="scoreLabel" destination="OVm-9v-ywl" id="WAd-mt-dwg"/>
+                <outlet property="usernameLabel" destination="8Cf-wO-AOo" id="2nB-EM-sBU"/>
+            </connections>
+            <point key="canvasLocation" x="-36.231884057971016" y="-58.258928571428569"/>
+        </tableViewCell>
+    </objects>
+</document>

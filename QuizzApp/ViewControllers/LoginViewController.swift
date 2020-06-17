@@ -43,9 +43,10 @@ final class LoginViewController: UIViewController {
                 case .success(let model):
                     self.loginModel = model
                     self.saveCredentials(loginModel: model)
-                    self.navigateToQuizzTable()
+                    self.navigateFromLogin()
                 case .failure(let err):
                     print("Fail:", err)
+                    //labela il alert
                 }
             }
         }
@@ -56,16 +57,20 @@ final class LoginViewController: UIViewController {
            UserDefaults.standard.set(loginModel.token, forKey: "token")
        }
     
-    private func navigateToQuizzTable(){
-        let quizTableViewController = QuizTableViewController(nibName: "QuizTableViewController", bundle: nil)
-        navigationController?.pushViewController(quizTableViewController, animated: true)
+    private func navigateFromLogin(){
+       //vise nije navigacija nego promjena window root-a
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            appDelegate.window?.rootViewController = TabBarViewController()
+        }
     }
-    //TODO: prebacit metode u ekstenziju buttona/textfielda
+   
     private func setUpView(){
-        Utilites.styleTextField(textfield: usernameTF)
-        Utilites.styleTextField(textfield: passwordTF)
-        Utilites.styleButton(button: loginButton)
+        navigationItem.title = "Login"
+        UITextField.styleTextField(textfield: usernameTF)
+        UITextField.styleTextField(textfield: passwordTF)
+        UIButton.styleButton(button: loginButton)
     }
     
  
 }
+ 

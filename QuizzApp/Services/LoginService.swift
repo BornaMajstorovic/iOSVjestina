@@ -12,7 +12,7 @@ import Foundation
 class LoginService {
     func loginUserWith(username: String, password: String, completion: @escaping ((Result<LoginModel, Error>) -> Void)) {
         
-        let urlString = "https://iosquiz.herokuapp.com/api/session"
+        let urlString = Constants.baseUrl + "/session"
         
         guard let url = URL(string: urlString) else { return }
         

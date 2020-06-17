@@ -12,6 +12,18 @@
 		021F6A6A243F76C3003DEFF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 021F6A68243F76C3003DEFF7 /* LaunchScreen.storyboard */; };
 		021F6A77243F979C003DEFF7 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021F6A76243F979C003DEFF7 /* Utilities.swift */; };
 		021F6A79243F97AD003DEFF7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021F6A78243F97AD003DEFF7 /* Constants.swift */; };
+		022517DC2499FA5A00E38833 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022517DB2499FA5A00E38833 /* TabBarViewController.swift */; };
+		022517DF249A045A00E38833 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022517DD249A045A00E38833 /* SearchViewController.swift */; };
+		022517E0249A045A00E38833 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 022517DE249A045A00E38833 /* SearchViewController.xib */; };
+		022517E3249A046D00E38833 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022517E1249A046D00E38833 /* SettingsViewController.swift */; };
+		022517E4249A046D00E38833 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 022517E2249A046D00E38833 /* SettingsViewController.xib */; };
+		022517F0249A155000E38833 /* LeaderboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022517EF249A155000E38833 /* LeaderboardViewModel.swift */; };
+		022517F2249A159200E38833 /* ScoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022517F1249A159200E38833 /* ScoreModel.swift */; };
+		022517F5249A21D100E38833 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022517F3249A21D100E38833 /* LeaderboardViewController.swift */; };
+		022517F6249A21D100E38833 /* LeaderboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 022517F4249A21D100E38833 /* LeaderboardViewController.xib */; };
+		022517F9249A85D000E38833 /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022517F7249A85D000E38833 /* ScoreTableViewCell.swift */; };
+		022517FA249A85D000E38833 /* ScoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 022517F8249A85D000E38833 /* ScoreTableViewCell.xib */; };
+		022517FC249A868700E38833 /* ScoreCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022517FB249A868700E38833 /* ScoreCellModel.swift */; };
 		023115752467045700421E7E /* QuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 023115742467045700421E7E /* QuestionView.xib */; };
 		0231157724670AFD00421E7E /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0231157624670AFC00421E7E /* LoginService.swift */; };
 		0231157924670B4700421E7E /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0231157824670B4700421E7E /* LoginViewController.xib */; };
@@ -47,6 +59,18 @@
 		021F6A6B243F76C3003DEFF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		021F6A76243F979C003DEFF7 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		021F6A78243F97AD003DEFF7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		022517DB2499FA5A00E38833 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		022517DD249A045A00E38833 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		022517DE249A045A00E38833 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		022517E1249A046D00E38833 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		022517E2249A046D00E38833 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		022517EF249A155000E38833 /* LeaderboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewModel.swift; sourceTree = "<group>"; };
+		022517F1249A159200E38833 /* ScoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreModel.swift; sourceTree = "<group>"; };
+		022517F3249A21D100E38833 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
+		022517F4249A21D100E38833 /* LeaderboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaderboardViewController.xib; sourceTree = "<group>"; };
+		022517F7249A85D000E38833 /* ScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableViewCell.swift; sourceTree = "<group>"; };
+		022517F8249A85D000E38833 /* ScoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreTableViewCell.xib; sourceTree = "<group>"; };
+		022517FB249A868700E38833 /* ScoreCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCellModel.swift; sourceTree = "<group>"; };
 		023115742467045700421E7E /* QuestionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionView.xib; sourceTree = "<group>"; };
 		0231157624670AFC00421E7E /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		0231157824670B4700421E7E /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -144,6 +168,13 @@
 				026A5C39248171F0007D37CE /* QuizTableViewController.xib */,
 				0274E67B24865525004CBD85 /* QuizViewController.swift */,
 				0274E67C24865525004CBD85 /* QuizViewController.xib */,
+				022517DB2499FA5A00E38833 /* TabBarViewController.swift */,
+				022517F3249A21D100E38833 /* LeaderboardViewController.swift */,
+				022517F4249A21D100E38833 /* LeaderboardViewController.xib */,
+				022517DD249A045A00E38833 /* SearchViewController.swift */,
+				022517DE249A045A00E38833 /* SearchViewController.xib */,
+				022517E1249A046D00E38833 /* SettingsViewController.swift */,
+				022517E2249A046D00E38833 /* SettingsViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -164,6 +195,7 @@
 				0240BF51244085C70097D60E /* QuestionModel.swift */,
 				0240BF4324407FD80097D60E /* Category.swift */,
 				02D071B32467FA8A000077D8 /* LoginModel.swift */,
+				022517F1249A159200E38833 /* ScoreModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -177,6 +209,8 @@
 				026D377E2485510400C96DF6 /* QuizzesTableViewCell.xib */,
 				026D3781248566FC00C96DF6 /* QuizzFooterView.swift */,
 				026D37832485674700C96DF6 /* QuizzHeaderView.swift */,
+				022517F7249A85D000E38833 /* ScoreTableViewCell.swift */,
+				022517F8249A85D000E38833 /* ScoreTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,8 +219,10 @@
 			isa = PBXGroup;
 			children = (
 				0274E67924864C5A004CBD85 /* QuizCellModel.swift */,
+				022517FB249A868700E38833 /* ScoreCellModel.swift */,
 				0274E675248631A6004CBD85 /* QuizzesViewModel.swift */,
 				0274E677248631BB004CBD85 /* SingleQuizViewModel.swift */,
+				022517EF249A155000E38833 /* LeaderboardViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -270,12 +306,16 @@
 			files = (
 				0231157924670B4700421E7E /* LoginViewController.xib in Resources */,
 				023115752467045700421E7E /* QuestionView.xib in Resources */,
+				022517F6249A21D100E38833 /* LeaderboardViewController.xib in Resources */,
 				021F6A6A243F76C3003DEFF7 /* LaunchScreen.storyboard in Resources */,
 				026D37802485510400C96DF6 /* QuizzesTableViewCell.xib in Resources */,
 				026A5C3B248171F0007D37CE /* QuizTableViewController.xib in Resources */,
+				022517FA249A85D000E38833 /* ScoreTableViewCell.xib in Resources */,
+				022517E0249A045A00E38833 /* SearchViewController.xib in Resources */,
 				021F6A67243F76C3003DEFF7 /* Assets.xcassets in Resources */,
 				0240BF3D244070FC0097D60E /* InitialViewController.xib in Resources */,
 				0274E67E24865525004CBD85 /* QuizViewController.xib in Resources */,
+				022517E4249A046D00E38833 /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +370,11 @@
 			files = (
 				0240BF4224407E1F0097D60E /* QuestionView.swift in Sources */,
 				02D071B42467FA8A000077D8 /* LoginModel.swift in Sources */,
+				022517FC249A868700E38833 /* ScoreCellModel.swift in Sources */,
+				022517F9249A85D000E38833 /* ScoreTableViewCell.swift in Sources */,
+				022517F0249A155000E38833 /* LeaderboardViewModel.swift in Sources */,
+				022517DC2499FA5A00E38833 /* TabBarViewController.swift in Sources */,
+				022517F5249A21D100E38833 /* LeaderboardViewController.swift in Sources */,
 				026D377F2485510400C96DF6 /* QuizzesTableViewCell.swift in Sources */,
 				0240BF50244084610097D60E /* QuizModel.swift in Sources */,
 				0240BF3C244070FC0097D60E /* InitialViewController.swift in Sources */,
@@ -340,6 +385,8 @@
 				026D37842485674700C96DF6 /* QuizzHeaderView.swift in Sources */,
 				021F6A5E243F76C2003DEFF7 /* AppDelegate.swift in Sources */,
 				0274E678248631BB004CBD85 /* SingleQuizViewModel.swift in Sources */,
+				022517F2249A159200E38833 /* ScoreModel.swift in Sources */,
+				022517DF249A045A00E38833 /* SearchViewController.swift in Sources */,
 				0274E67D24865525004CBD85 /* QuizViewController.swift in Sources */,
 				0274E676248631A6004CBD85 /* QuizzesViewModel.swift in Sources */,
 				0240BF52244085C70097D60E /* QuestionModel.swift in Sources */,
@@ -349,6 +396,7 @@
 				026A5C3A248171F0007D37CE /* QuizTableViewController.swift in Sources */,
 				021F6A77243F979C003DEFF7 /* Utilities.swift in Sources */,
 				0231157B24670B6A00421E7E /* LoginViewController.swift in Sources */,
+				022517E3249A046D00E38833 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

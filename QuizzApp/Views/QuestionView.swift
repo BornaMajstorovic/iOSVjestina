@@ -84,3 +84,10 @@ final class QuestionView: UIView {
     }
     
 }
+//    private func handleCorrectAnswer(button: UIButton, buttonAnswer: Int) {
+//    if correctAnswer == buttonAnswer {
+//        button.backgroundColor = .green
+//    } else {
+//        button.backgroundColor = .red
+//    }
+//} sve buttone na jedan ibaction

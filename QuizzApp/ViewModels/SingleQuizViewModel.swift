@@ -9,7 +9,7 @@
 import Foundation
 
 class SingleQuizViewModel  {
-    private let quiz: QuizModel?
+    let quiz: QuizModel?
     
     init(quiz: QuizModel?) {
         self.quiz = quiz

@@ -24,21 +24,23 @@ class QuizViewController: UIViewController {
     var startTime: Date?
     
     convenience init(viewModel: SingleQuizViewModel) {
-           self.init()
-           self.viewModel = viewModel
+        self.init()
+        self.viewModel = viewModel
     }
     
 
     // MARK: Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationItem.title = "Single Quiz"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Leaderboard", style: .plain, target: self, action: #selector(onTapLeaderboard))
         titleLabel.text = viewModel?.title
         quizImage.kf.setImage(with: viewModel?.imageUrl)
         scroolView.isHidden = true
         
         setUpScroll()
         
+    
     }
     
    
@@ -55,9 +57,7 @@ class QuizViewController: UIViewController {
     func postResults(){
         guard let viewModel = viewModel else{return}
         let quizId = viewModel.id
-        let numOfCorrect = answears.filter { (ans) -> Bool in
-            return ans
-        }.count
+        let numOfCorrect = answears.filter {$0}.count
         guard let startTime = startTime else{return}
         let timePassed = Double(Date().timeIntervalSince(startTime))
         let quizService = QuizzesService()
@@ -81,6 +81,13 @@ class QuizViewController: UIViewController {
             questionView.configureWith(model: question)
             scroolView.addSubview(questionView)
         }
+    }
+    
+    @objc func onTapLeaderboard() {
+        guard let quiz = viewModel?.quiz else {return}
+        let leadeBoardVM = LeaderboardViewModel(quiz: quiz)
+        let leaderboardVC = LeaderboardViewController(viewModel: leadeBoardVM)
+        present(leaderboardVC,animated: true,completion: nil)
     }
 }
 extension QuizViewController: QuestionViewDelegate {
