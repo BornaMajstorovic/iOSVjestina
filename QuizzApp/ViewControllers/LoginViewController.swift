@@ -55,6 +55,7 @@ final class LoginViewController: UIViewController {
     private func saveCredentials(loginModel: LoginModel) {
            UserDefaults.standard.set(loginModel.userId, forKey: "userId")
            UserDefaults.standard.set(loginModel.token, forKey: "token")
+        UserDefaults.standard.set(usernameTF.text, forKey: "username")
        }
     
     private func navigateFromLogin(){

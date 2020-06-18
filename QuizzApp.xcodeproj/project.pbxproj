@@ -35,6 +35,9 @@
 		0240BF4E244084520097D60E /* QuizzesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0240BF4D244084520097D60E /* QuizzesService.swift */; };
 		0240BF50244084610097D60E /* QuizModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0240BF4F244084610097D60E /* QuizModel.swift */; };
 		0240BF52244085C70097D60E /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0240BF51244085C70097D60E /* QuestionModel.swift */; };
+		02424134249B64A4008EAD4F /* TableViewTemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02424133249B64A4008EAD4F /* TableViewTemplateViewController.swift */; };
+		02424137249BC3A0008EAD4F /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02424135249BC3A0008EAD4F /* Model.xcdatamodeld */; };
+		02424142249BCBA6008EAD4F /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02424141249BCBA6008EAD4F /* DataController.swift */; };
 		026A5C3A248171F0007D37CE /* QuizTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026A5C38248171F0007D37CE /* QuizTableViewController.swift */; };
 		026A5C3B248171F0007D37CE /* QuizTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 026A5C39248171F0007D37CE /* QuizTableViewController.xib */; };
 		026D377F2485510400C96DF6 /* QuizzesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026D377D2485510400C96DF6 /* QuizzesTableViewCell.swift */; };
@@ -82,6 +85,9 @@
 		0240BF4D244084520097D60E /* QuizzesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzesService.swift; sourceTree = "<group>"; };
 		0240BF4F244084610097D60E /* QuizModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizModel.swift; sourceTree = "<group>"; };
 		0240BF51244085C70097D60E /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
+		02424133249B64A4008EAD4F /* TableViewTemplateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewTemplateViewController.swift; sourceTree = "<group>"; };
+		02424136249BC3A0008EAD4F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		02424141249BCBA6008EAD4F /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		026A5C38248171F0007D37CE /* QuizTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTableViewController.swift; sourceTree = "<group>"; };
 		026A5C39248171F0007D37CE /* QuizTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizTableViewController.xib; sourceTree = "<group>"; };
 		026D377D2485510400C96DF6 /* QuizzesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzesTableViewCell.swift; sourceTree = "<group>"; };
@@ -134,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				021F6A71243F7C13003DEFF7 /* Resources */,
+				02424138249BC7A7008EAD4F /* CoreData */,
 				0240BF3E244071D00097D60E /* Services */,
 				0240BF3F244071DF0097D60E /* Models */,
 				0274E6742486305E004CBD85 /* ViewModels */,
@@ -160,6 +167,7 @@
 		021F6A75243F8788003DEFF7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				02424133249B64A4008EAD4F /* TableViewTemplateViewController.swift */,
 				0240BF3A244070FC0097D60E /* InitialViewController.swift */,
 				0240BF3B244070FC0097D60E /* InitialViewController.xib */,
 				0231157A24670B6A00421E7E /* LoginViewController.swift */,
@@ -213,6 +221,15 @@
 				022517F8249A85D000E38833 /* ScoreTableViewCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		02424138249BC7A7008EAD4F /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				02424141249BCBA6008EAD4F /* DataController.swift */,
+				02424135249BC3A0008EAD4F /* Model.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		0274E6742486305E004CBD85 /* ViewModels */ = {
@@ -381,6 +398,7 @@
 				02C023DA2491785A00F3DC7E /* UserCredentials.swift in Sources */,
 				0240BF4E244084520097D60E /* QuizzesService.swift in Sources */,
 				021F6A79243F97AD003DEFF7 /* Constants.swift in Sources */,
+				02424142249BCBA6008EAD4F /* DataController.swift in Sources */,
 				0274E67A24864C5A004CBD85 /* QuizCellModel.swift in Sources */,
 				026D37842485674700C96DF6 /* QuizzHeaderView.swift in Sources */,
 				021F6A5E243F76C2003DEFF7 /* AppDelegate.swift in Sources */,
@@ -388,6 +406,8 @@
 				022517F2249A159200E38833 /* ScoreModel.swift in Sources */,
 				022517DF249A045A00E38833 /* SearchViewController.swift in Sources */,
 				0274E67D24865525004CBD85 /* QuizViewController.swift in Sources */,
+				02424137249BC3A0008EAD4F /* Model.xcdatamodeld in Sources */,
+				02424134249B64A4008EAD4F /* TableViewTemplateViewController.swift in Sources */,
 				0274E676248631A6004CBD85 /* QuizzesViewModel.swift in Sources */,
 				0240BF52244085C70097D60E /* QuestionModel.swift in Sources */,
 				0231157724670AFD00421E7E /* LoginService.swift in Sources */,
@@ -588,6 +608,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		02424135249BC3A0008EAD4F /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				02424136249BC3A0008EAD4F /* Model.xcdatamodel */,
+			);
+			currentVersion = 02424136249BC3A0008EAD4F /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 021F6A52243F76C1003DEFF7 /* Project object */;
 }
