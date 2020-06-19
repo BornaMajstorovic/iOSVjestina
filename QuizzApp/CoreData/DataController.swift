@@ -25,12 +25,25 @@ class DataController {
         return container
     }()
     
-    func fetchQuizzes(){
-       
+    func fetchQuizzes()-> [Quiz]?{
+        let request: NSFetchRequest<Quiz> = Quiz.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
+        let context = DataController.shared.persistentContainer.viewContext
+        let quizzes = try? context.fetch(request)
+        return quizzes
     }
     
-    func fetchSearchQuizzes(){
-        
+    func fetchSearchQuizzes(key: String)-> [Quiz]?{
+        let request: NSFetchRequest<Quiz> = Quiz.fetchRequest()
+        if key != "" {
+            let titlePredicate: NSPredicate = NSPredicate(format: "title CONTAINS[c] %@", key)
+            let descriptionPredicate: NSPredicate = NSPredicate(format: "descript CONTAINS[c] %@", key)
+            request.predicate = NSCompoundPredicate(orPredicateWithSubpredicates:  [titlePredicate, descriptionPredicate])
+        }
+        request.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
+        let context = DataController.shared.persistentContainer.viewContext
+        let quizzes = try? context.fetch(request)
+        return quizzes
     }
     
     func saveContext(){

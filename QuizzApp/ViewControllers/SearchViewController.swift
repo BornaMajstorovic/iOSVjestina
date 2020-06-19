@@ -117,8 +117,13 @@ extension SearchViewController: UITableViewDataSource {
         let category = Category.allCases[section]
         return self.viewModel?.numberOfQuizzes(category: category) ?? 0
     } //broj kvizova u kategoriji
-    
-   
-    
-    
 }
+
+extension SearchViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+    }
+}
+
+
+

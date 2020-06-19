@@ -41,5 +41,8 @@ class QuizzesViewModel {
         return QuizCellModel(quiz: quizzesByCategory[indexpath.row])
     }
     
+    func searchQuizzes(key: String ){
+        //quizzes = DataController.shared.fetchSearchQuizzes(key: key)
+    }
     
 }

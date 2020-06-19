@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		021DEF89249CA1BF00902F69 /* Question+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021DEF88249CA1BF00902F69 /* Question+CoreDataProperties.swift */; };
+		021DEF8A249CA1BF00902F69 /* Quiz+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021DEF87249CA1BF00902F69 /* Quiz+CoreDataClass.swift */; };
+		021DEF8B249CA1BF00902F69 /* Question+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021DEF86249CA1BF00902F69 /* Question+CoreDataClass.swift */; };
+		021DEF8C249CA1BF00902F69 /* Quiz+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021DEF85249CA1BE00902F69 /* Quiz+CoreDataProperties.swift */; };
+		021DEF8E249CC73400902F69 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021DEF8D249CC73400902F69 /* Reachability.swift */; };
 		021F6A5E243F76C2003DEFF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021F6A5D243F76C2003DEFF7 /* AppDelegate.swift */; };
 		021F6A67243F76C3003DEFF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 021F6A66243F76C3003DEFF7 /* Assets.xcassets */; };
 		021F6A6A243F76C3003DEFF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 021F6A68243F76C3003DEFF7 /* LaunchScreen.storyboard */; };
@@ -55,6 +60,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		021DEF85249CA1BE00902F69 /* Quiz+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Quiz+CoreDataProperties.swift"; path = "/Users/borna/Skriptanje/IOS-Apps/QuizzApp/QuizzApp/CoreData/Quiz+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		021DEF86249CA1BF00902F69 /* Question+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Question+CoreDataClass.swift"; path = "/Users/borna/Skriptanje/IOS-Apps/QuizzApp/QuizzApp/CoreData/Question+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		021DEF87249CA1BF00902F69 /* Quiz+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Quiz+CoreDataClass.swift"; path = "/Users/borna/Skriptanje/IOS-Apps/QuizzApp/QuizzApp/CoreData/Quiz+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		021DEF88249CA1BF00902F69 /* Question+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Question+CoreDataProperties.swift"; path = "/Users/borna/Skriptanje/IOS-Apps/QuizzApp/QuizzApp/CoreData/Question+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		021DEF8D249CC73400902F69 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		021F6A5A243F76C2003DEFF7 /* QuizzApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizzApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		021F6A5D243F76C2003DEFF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		021F6A66243F76C3003DEFF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -226,8 +236,13 @@
 		02424138249BC7A7008EAD4F /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				021DEF86249CA1BF00902F69 /* Question+CoreDataClass.swift */,
+				021DEF88249CA1BF00902F69 /* Question+CoreDataProperties.swift */,
+				021DEF87249CA1BF00902F69 /* Quiz+CoreDataClass.swift */,
+				021DEF85249CA1BE00902F69 /* Quiz+CoreDataProperties.swift */,
 				02424141249BCBA6008EAD4F /* DataController.swift */,
 				02424135249BC3A0008EAD4F /* Model.xcdatamodeld */,
+				021DEF8D249CC73400902F69 /* Reachability.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -394,18 +409,23 @@
 				022517F5249A21D100E38833 /* LeaderboardViewController.swift in Sources */,
 				026D377F2485510400C96DF6 /* QuizzesTableViewCell.swift in Sources */,
 				0240BF50244084610097D60E /* QuizModel.swift in Sources */,
+				021DEF8B249CA1BF00902F69 /* Question+CoreDataClass.swift in Sources */,
 				0240BF3C244070FC0097D60E /* InitialViewController.swift in Sources */,
 				02C023DA2491785A00F3DC7E /* UserCredentials.swift in Sources */,
+				021DEF8C249CA1BF00902F69 /* Quiz+CoreDataProperties.swift in Sources */,
 				0240BF4E244084520097D60E /* QuizzesService.swift in Sources */,
 				021F6A79243F97AD003DEFF7 /* Constants.swift in Sources */,
+				021DEF8E249CC73400902F69 /* Reachability.swift in Sources */,
 				02424142249BCBA6008EAD4F /* DataController.swift in Sources */,
 				0274E67A24864C5A004CBD85 /* QuizCellModel.swift in Sources */,
 				026D37842485674700C96DF6 /* QuizzHeaderView.swift in Sources */,
+				021DEF89249CA1BF00902F69 /* Question+CoreDataProperties.swift in Sources */,
 				021F6A5E243F76C2003DEFF7 /* AppDelegate.swift in Sources */,
 				0274E678248631BB004CBD85 /* SingleQuizViewModel.swift in Sources */,
 				022517F2249A159200E38833 /* ScoreModel.swift in Sources */,
 				022517DF249A045A00E38833 /* SearchViewController.swift in Sources */,
 				0274E67D24865525004CBD85 /* QuizViewController.swift in Sources */,
+				021DEF8A249CA1BF00902F69 /* Quiz+CoreDataClass.swift in Sources */,
 				02424137249BC3A0008EAD4F /* Model.xcdatamodeld in Sources */,
 				02424134249B64A4008EAD4F /* TableViewTemplateViewController.swift in Sources */,
 				0274E676248631A6004CBD85 /* QuizzesViewModel.swift in Sources */,

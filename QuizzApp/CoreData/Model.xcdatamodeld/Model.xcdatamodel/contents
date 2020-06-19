@@ -16,7 +16,7 @@
         <relationship name="questions" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Question"/>
     </entity>
     <elements>
-        <element name="Quiz" positionX="-104.05078125" positionY="-85.828125" width="128" height="28"/>
         <element name="Question" positionX="142.45703125" positionY="-247.28515625" width="128" height="28"/>
+        <element name="Quiz" positionX="-104.05078125" positionY="-85.828125" width="128" height="28"/>
     </elements>
 </model>
