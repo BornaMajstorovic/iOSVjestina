@@ -42,6 +42,8 @@ class QuizzesService {
         guard let url = URL(string: urlString) else {return}
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
+        guard let token = UserDefaults.standard.string(forKey: "token") else{return}
+        request.addValue(token, forHTTPHeaderField: "Authorization")
         
         URLSession.shared.dataTask(with: request){ (data,response,err) in
             if let data = data {

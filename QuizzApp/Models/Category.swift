@@ -19,9 +19,9 @@ extension Category {
         get {
             switch self {
             case .SPORTS:
-                return UIColor.yellow
+                return #colorLiteral(red: 0.2196078431, green: 0.9647058824, blue: 0.537254902, alpha: 1)
             case .SCIENCE:
-                return UIColor.red
+                return #colorLiteral(red: 1, green: 0.8431372549, blue: 0, alpha: 1)
             }
         }
     }

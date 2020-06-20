@@ -8,9 +8,9 @@
 
 import UIKit
 
-protocol QuestionViewDelegate: class {
-    func answeardQuestions(isCorrect: Bool)
-}
+//protocol QuestionViewDelegate: class {
+//    func answeardQuestions(isCorrect: Bool)
+//}
 
 
 final class QuestionView: UIView {

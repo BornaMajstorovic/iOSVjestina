@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="loginButton" destination="Q1a-K7-ZS7" id="YTD-WI-NXe"/>
                 <outlet property="passwordTF" destination="LaO-0a-rey" id="Bn9-h9-ke3"/>
+                <outlet property="titleLabel" destination="pbi-bu-VpL" id="5ab-v5-zPt"/>
                 <outlet property="usernameTF" destination="sIc-wA-TGM" id="kTa-pH-bFk"/>
                 <outlet property="view" destination="iN0-l3-epB" id="xTo-Sd-b8o"/>
             </connections>
@@ -22,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="wVr-N1-6XJ">
-                    <rect key="frame" x="40" y="124" width="334" height="230"/>
+                    <rect key="frame" x="40" y="203" width="334" height="230"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sIc-wA-TGM">
                             <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
@@ -52,15 +53,28 @@
                         <constraint firstItem="Q1a-K7-ZS7" firstAttribute="height" secondItem="sIc-wA-TGM" secondAttribute="height" id="LUA-xc-1fm"/>
                     </constraints>
                 </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbi-bu-VpL">
+                    <rect key="frame" x="182" y="108" width="50" height="30"/>
+                    <color key="backgroundColor" red="0.4549019608" green="0.30980392159999998" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="MIH-H2-zBR"/>
+                        <constraint firstAttribute="width" constant="50" id="g3U-Lc-AUJ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" red="0.97031718489999996" green="0.7819978595" blue="0.34364014859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="wVr-N1-6XJ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="80" id="4nh-Kd-bUC"/>
+                <constraint firstItem="pbi-bu-VpL" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="64" id="083-ea-zJX"/>
+                <constraint firstItem="pbi-bu-VpL" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="6zr-MT-Rwq"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="wVr-N1-6XJ" secondAttribute="trailing" constant="40" id="Sd8-Op-Eyd"/>
                 <constraint firstItem="wVr-N1-6XJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="Tcb-2X-h1F"/>
+                <constraint firstItem="wVr-N1-6XJ" firstAttribute="top" secondItem="pbi-bu-VpL" secondAttribute="bottom" constant="65" id="siB-x4-svt"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="-499" y="19"/>
+            <point key="canvasLocation" x="-651" y="-32"/>
         </view>
     </objects>
 </document>

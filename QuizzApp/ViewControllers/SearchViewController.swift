@@ -87,9 +87,15 @@ extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        UIView.beginAnimations("flipajVC", context: nil)
+        UIView.setAnimationDuration(1.0)
+        
         guard let viewModel = self.viewModel?.singleQuizViewModel(forIndexPath: indexPath) else {return}
         let quizViewController = QuizViewController(viewModel: viewModel)
         navigationController?.pushViewController(quizViewController, animated: true)
+        
+        UIView.setAnimationTransition(UIView.AnimationTransition.flipFromLeft, for: (self.navigationController?.view)!, cache: false)
+        UIView.commitAnimations()
     }//na tap cella prijedi na quizvc
     
     

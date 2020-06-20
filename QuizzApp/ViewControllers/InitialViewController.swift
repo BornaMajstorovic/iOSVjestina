@@ -64,12 +64,13 @@ final class InitialViewController: UIViewController {
                     //questionView setup
                     let question = quiz.questions.randomElement()
                     
-                    if let questionView = Bundle.main.loadNibNamed("QuestionView", owner: nil, options: nil)?.first as? QuestionView, let question = question {
-                        questionView.configureWith(model: question)
-                        self.questionContainer.addSubview(questionView)
-                    }
-                    
-                    
+//                    if let questionView = Bundle.main.loadNibNamed("QuestionView", owner: nil, options: nil)?.first as? QuestionView, let question = question {
+//                        questionView.configureWith(model: question)
+//                        self.questionContainer.addSubview(questionView)
+//                    }
+                    let questionVIew = QuestionViewFromCode(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: 374, height: 273)))
+                    questionVIew.setupView(with: question!)
+                    self.questionContainer.addSubview(questionVIew)
                 case .failure(let err):
                     print("Failed to fetc", err)
                     self.errorLabel.isHidden = false

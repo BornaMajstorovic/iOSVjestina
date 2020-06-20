@@ -15,12 +15,12 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var quizImage: UIImageView!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var scroolView: UIScrollView!
-    
+    @IBOutlet weak var questionContainer: UIView!
     
     // MARK: Properties
     var viewModel: SingleQuizViewModel?
     var answears: [Bool] = []
-    var questionViews: [QuestionView] = []
+    
     var startTime: Date?
     
     convenience init(viewModel: SingleQuizViewModel) {
@@ -32,18 +32,10 @@ class QuizViewController: UIViewController {
     // MARK: Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Single Quiz"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Leaderboard", style: .plain, target: self, action: #selector(onTapLeaderboard))
-        titleLabel.text = viewModel?.title
-        quizImage.kf.setImage(with: viewModel?.imageUrl)
-        scroolView.isHidden = true
-        
+        setup()
         setUpScroll()
-        
-    
     }
     
-   
 
     // MARK: Actions
     @IBAction func startButtonTapped(_ sender: UIButton) {
@@ -53,6 +45,14 @@ class QuizViewController: UIViewController {
     }
     
     // MARK: Class methods
+    
+    func setup(){
+        navigationItem.title = "Single Quiz"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Leaderboard", style: .plain, target: self, action: #selector(onTapLeaderboard))
+        titleLabel.text = viewModel?.title
+        quizImage.kf.setImage(with: viewModel?.imageUrl)
+        scroolView.isHidden = true
+    }
     
     func postResults(){
         guard let viewModel = viewModel else{return}
@@ -73,14 +73,24 @@ class QuizViewController: UIViewController {
         let questionWidth = scroolView.frame.width
         let fullWidth = questionWidth*CGFloat(viewModel.numberOfQuestions)
         scroolView.contentSize = CGSize(width: fullWidth, height: scroolView.frame.height)
+        
         let arr: [QuestionModel] = viewModel.questions
-        for (i, question) in arr.enumerated() {
-            let offset = questionWidth*CGFloat(i)
-            let questionView = QuestionView(frame: CGRect(origin: CGPoint(x: offset, y: 0), size: scroolView.frame.size))
-            questionView.delegat = self
-            questionView.configureWith(model: question)
-            scroolView.addSubview(questionView)
-        }
+//        for (i, question) in arr.enumerated() {
+//            let offset = questionWidth*CGFloat(i)
+//            let questionView = QuestionViewFromCode(frame: CGRect(origin: CGPoint(x: offset, y: 0), size: scroolView.frame.size))
+//            questionView.delegate = self
+//            questionView.setupView(with: question)
+//            scroolView.addSubview(questionView)
+//        }
+         viewModel.questions.enumerated().forEach {
+                   let offset = questionWidth * CGFloat($0)
+                   let questionView = QuestionViewFromCode(
+                       frame: CGRect(origin: CGPoint(x: offset, y: 0),
+                                     size: scroolView.frame.size))
+            questionView.setupView(with: $1)
+                   questionView.delegate = self
+                   scroolView.addSubview(questionView)
+               }
     }
     
     @objc func onTapLeaderboard() {
