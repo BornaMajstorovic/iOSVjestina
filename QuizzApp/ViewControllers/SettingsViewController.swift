@@ -20,15 +20,20 @@ class SettingsViewController: UIViewController {
 
 
     @IBAction func logoutTapped(_ sender: UIButton) {
-        UserDefaults.standard.removeObject(forKey: "token")
-        UserDefaults.standard.removeObject(forKey: "userId")
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate{
-            appDelegate.window!.rootViewController = LoginViewController()
+        UIView.animate(withDuration: 2,delay: 0, animations: {
+            self.logoutButton.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
+        }){_ in
+            UserCredentialsAndNavigation.shared.deleteUser()
         }
+
+        
     }
     
     func setUpView() {
+        UILabel.styleLabel(label: usernameLabel)
+        UILabel.styleLabel(label: usernameValueLabel)
         usernameLabel.text = "Username: "
+        self.view.backgroundColor = #colorLiteral(red: 0.9921568627, green: 0.8901960784, blue: 0.6549019608, alpha: 1)
         usernameValueLabel.text = UserDefaults.standard.string(forKey: "username")
         logoutButton.layer.cornerRadius = 0.5 * logoutButton.frame.width
         logoutButton.backgroundColor = #colorLiteral(red: 0.5328530073, green: 0.402020514, blue: 0.6997897029, alpha: 1)

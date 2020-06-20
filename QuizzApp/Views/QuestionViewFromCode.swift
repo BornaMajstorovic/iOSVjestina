@@ -9,6 +9,7 @@
 import UIKit
 import PureLayout
 
+
 protocol QuestionViewDelegate: class {
     func answeardQuestions(isCorrect: Bool)
 }
@@ -71,14 +72,16 @@ class QuestionViewFromCode: UIView {
     
      func setupView(with model: QuestionModel){
         question = model
-        backgroundColor = UIColor.lightText
+        backgroundColor = #colorLiteral(red: 0.9921568627, green: 0.8901960784, blue: 0.6549019608, alpha: 1)
         
         guard   let question = model.question,
             let answearsArr = model.answers else {return}
         
         questionLabel = UILabel()
         questionLabel?.text = question
-        questionLabel?.backgroundColor = #colorLiteral(red: 0.5328530073, green: 0.402020514, blue: 0.6997897029, alpha: 1)
+        questionLabel?.numberOfLines = 2
+        UILabel.styleLabel(label: questionLabel!)
+  
         if let questionLabel = questionLabel {
             self.addSubview(questionLabel)
         }
@@ -91,8 +94,8 @@ class QuestionViewFromCode: UIView {
     
     func addButton(title: String){
         let button = UIButton()
+        UIButton.styleButton(button: button)
         button.setTitle(title, for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0.5328530073, green: 0.402020514, blue: 0.6997897029, alpha: 1)
         button.addTarget(self, action: #selector(QuestionViewFromCode.answerTapped(sender:)), for: .touchUpInside)
         self.answers.append(button)
         self.addSubview(button)

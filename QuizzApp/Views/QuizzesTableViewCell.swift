@@ -35,7 +35,7 @@ class QuizzesTableViewCell: UITableViewCell {
     }
     // kingfisher ponekad nakon refresha crasha sa nilom
     func configure(withQuizz quiz: QuizCellModel){
-        self.backgroundColor = #colorLiteral(red: 0.6352941176, green: 0.8705882353, blue: 0.8156862745, alpha: 1)
+        self.backgroundColor = #colorLiteral(red: 0.9921568627, green: 0.8901960784, blue: 0.6549019608, alpha: 1)
         quizzTitle.text = quiz.title
         quizDescription.text = quiz.description
         quizzDifficulty.text = quiz.level

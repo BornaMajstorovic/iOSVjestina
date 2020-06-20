@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import QuartzCore
+
 
 final class LoginViewController: UIViewController {
     
@@ -54,11 +54,10 @@ final class LoginViewController: UIViewController {
                 switch result {
                 case .success(let model):
                     self.loginModel = model
-                    self.saveCredentials(loginModel: model)
+                    UserCredentialsAndNavigation.shared.saveUser(loginModel: model, username: self.usernameTF.text!)
                     self.animateEverythingOut()
                 case .failure(let err):
-                    print("Fail:", err)
-                    //labela il alert
+                    self.showAlert(title: "Error", message: err.localizedDescription)
                 }
             }
         }
@@ -128,19 +127,18 @@ final class LoginViewController: UIViewController {
     
     
 
-    private func saveCredentials(loginModel: LoginModel) {
-           UserDefaults.standard.set(loginModel.userId, forKey: "userId")
-           UserDefaults.standard.set(loginModel.token, forKey: "token")
-        UserDefaults.standard.set(usernameTF.text, forKey: "username")
-       }
+//    private func saveCredentials(loginModel: LoginModel) {
+//        UserDefaults.standard.set(loginModel.userId, forKey: "userId")
+//        UserDefaults.standard.set(loginModel.token, forKey: "token")
+//        UserDefaults.standard.set(usernameTF.text, forKey: "username")
+//       }
     
    
    
     private func setUpView(){
         navigationItem.title = "Login"
         self.view.backgroundColor = #colorLiteral(red: 0.9921568627, green: 0.8901960784, blue: 0.6549019608, alpha: 1)
-        titleLabel.layer.cornerRadius = 5
-        titleLabel.layer.masksToBounds = true
+        UILabel.styleLabel(label: titleLabel)
         UITextField.styleTextField(textfield: usernameTF)
         UITextField.styleTextField(textfield: passwordTF)
         UIButton.styleButton(button: loginButton)

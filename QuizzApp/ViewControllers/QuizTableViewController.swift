@@ -57,7 +57,7 @@ class QuizTableViewController: UIViewController {
                     self.viewModel?.quizzes = model.quizzes
                     self.refresh()
                 case .failure(let err):
-                    print("Failed to fetc", err)
+                    self.showAlert(title: "Error", message: err.localizedDescription)
                 }
             }
         })

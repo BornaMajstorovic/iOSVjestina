@@ -22,6 +22,10 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Search"
+        searchBar.barTintColor = #colorLiteral(red: 0.5328530073, green: 0.402020514, blue: 0.6997897029, alpha: 1)
+        //ne radi??
+        searchBar.tintColor = #colorLiteral(red: 0.9703171849, green: 0.7819978595, blue: 0.3436401486, alpha: 1)
+        
         setUpTableView()
         setUpViewModel()
     }
@@ -54,7 +58,7 @@ class SearchViewController: UIViewController {
                     self.viewModel?.quizzes = model.quizzes
                     self.refresh()
                 case .failure(let err):
-                    print("Failed to fetc", err)
+                    self.showAlert(title: "Error", message: err.localizedDescription)
                 }
             }
         })

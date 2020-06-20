@@ -16,16 +16,17 @@ final class UserCredentialsAndNavigation {
     private init(){}
     static let shared = UserCredentialsAndNavigation()
     
-    func saveUser(loginModel: LoginModel){
+    func saveUser(loginModel: LoginModel, username: String){
         UserDefaults.standard.set(loginModel.userId, forKey: "userId")
         UserDefaults.standard.set(loginModel.token, forKey: "token")
+        UserDefaults.standard.set(username, forKey: "username")
     }
     
-    func deleteUser(completion:(Bool)->()){
+    func deleteUser(){
         UserDefaults.standard.removeObject(forKey: "token")
+        UserDefaults.standard.removeObject(forKey: "userId")
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window!.rootViewController = LoginViewController()
-        completion(true)
     }
     
     func isUserLoggedIn(function: (UIViewController)->Void){

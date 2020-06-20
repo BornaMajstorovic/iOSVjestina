@@ -8,9 +8,7 @@
 
 import Foundation
 import UIKit
-
-class Utilites {
-}
+import QuartzCore
 
 extension UIButton {
     
@@ -28,7 +26,7 @@ extension UIButton {
          button.isEnabled = false
      }
      
-     static func styleButtonEnabled(button: UIButton) {
+    static func styleButtonEnabled(button: UIButton) {
          button.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
          button.layer.cornerRadius = 20
          button.tintColor = #colorLiteral(red: 0.5328530073, green: 0.402020514, blue: 0.6997897029, alpha: 1)
@@ -52,5 +50,24 @@ extension UITextField {
         // Add the line to the text field
         textfield.layer.addSublayer(bottomLine)
         
+    }
+}
+
+extension UIViewController {
+    func showAlert(title: String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(action)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+}
+
+extension UILabel {
+    static func styleLabel(label: UILabel){
+        label.backgroundColor = #colorLiteral(red: 0.5328530073, green: 0.402020514, blue: 0.6997897029, alpha: 1)
+        label.textColor = #colorLiteral(red: 0.9703171849, green: 0.7819978595, blue: 0.3436401486, alpha: 1)
+        label.layer.cornerRadius = 5
+        label.layer.masksToBounds = true
     }
 }

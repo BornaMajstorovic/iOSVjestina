@@ -63,8 +63,7 @@ class LeaderboardViewController: UIViewController {
                     }
                     self.refresh()
                 case .failure(let err):
-                    print("failed to fetcc", err)
-                    //alert
+                    self.showAlert(title: "Error", message: err.localizedDescription)
                 }
             }
         })
