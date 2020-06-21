@@ -96,6 +96,7 @@ class QuestionViewFromCode: UIView {
         let button = UIButton()
         UIButton.styleButton(button: button)
         button.setTitle(title, for: .normal)
+        button.tintColor = #colorLiteral(red: 0.9703171849, green: 0.7819978595, blue: 0.3436401486, alpha: 1)
         button.addTarget(self, action: #selector(QuestionViewFromCode.answerTapped(sender:)), for: .touchUpInside)
         self.answers.append(button)
         self.addSubview(button)

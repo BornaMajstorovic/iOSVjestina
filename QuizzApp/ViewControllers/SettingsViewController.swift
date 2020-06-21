@@ -9,26 +9,29 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-
+    // MARK: Outlets
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var usernameValueLabel: UILabel!
     @IBOutlet weak var logoutButton: UIButton!
+    
+    // MARK: Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
     }
 
-
+    // MARK: Actions
     @IBAction func logoutTapped(_ sender: UIButton) {
         UIView.animate(withDuration: 2,delay: 0, animations: {
             self.logoutButton.transform = CGAffineTransform(scaleX: 0.2, y: 0.2)
         }){_ in
-            UserCredentialsAndNavigation.shared.deleteUser()
+            UserCredentials.shared.deleteUser()
         }
 
         
     }
     
+    // MARK: Class methods
     func setUpView() {
         UILabel.styleLabel(label: usernameLabel)
         UILabel.styleLabel(label: usernameValueLabel)

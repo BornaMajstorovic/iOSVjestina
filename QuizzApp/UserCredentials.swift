@@ -9,12 +9,12 @@
 import Foundation
 import UIKit
 
-final class UserCredentialsAndNavigation {
+final class UserCredentials {
     private var quizToken: String?
     private var userId: String?
     
     private init(){}
-    static let shared = UserCredentialsAndNavigation()
+    static let shared = UserCredentials()
     
     func saveUser(loginModel: LoginModel, username: String){
         UserDefaults.standard.set(loginModel.userId, forKey: "userId")
@@ -25,6 +25,7 @@ final class UserCredentialsAndNavigation {
     func deleteUser(){
         UserDefaults.standard.removeObject(forKey: "token")
         UserDefaults.standard.removeObject(forKey: "userId")
+        UserDefaults.standard.removeObject(forKey: "username")
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window!.rootViewController = LoginViewController()
     }

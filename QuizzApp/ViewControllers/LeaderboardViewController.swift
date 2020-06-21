@@ -56,14 +56,11 @@ class LeaderboardViewController: UIViewController {
     func setUpViewModel() {
         viewModel?.fetchScores(completion: { (res) in
             DispatchQueue.main.async {
-                switch res {
-                case .success(let model):
-                    self.viewModel?.quizScores = model.allScores.sorted{
-                        $0 > $1
-                    }
+                switch res{
+                case .success(let _):
                     self.refresh()
                 case .failure(let err):
-                    self.showAlert(title: "Error", message: err.localizedDescription)
+                    self.showAlert(title: "errror", message: err.localizedDescription)
                 }
             }
         })

@@ -36,7 +36,7 @@ class QuizzesService {
         
     }
     
-    func fetchScores(quizId: Int, completion: @escaping ((Result<AllScores, Error>)->Void)){
+    func fetchScores(quizId: Int, completion: @escaping ((Result<[ScoreModel], Error>)->Void)){
         
         let urlString = Constants.baseUrl + "/score?quiz_id=\(quizId)"
         guard let url = URL(string: urlString) else {return}
@@ -44,11 +44,13 @@ class QuizzesService {
         request.httpMethod = "GET"
         guard let token = UserDefaults.standard.string(forKey: "token") else{return}
         request.addValue(token, forHTTPHeaderField: "Authorization")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
         
         URLSession.shared.dataTask(with: request){ (data,response,err) in
             if let data = data {
                 do {
-                    let model = try JSONDecoder().decode(AllScores.self, from: data)
+                    let model = try JSONDecoder().decode([ScoreModel].self, from: data)
                     completion(.success(model))
                 } catch let decodeErr {
                     completion(.failure(decodeErr))

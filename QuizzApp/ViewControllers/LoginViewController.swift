@@ -54,7 +54,7 @@ final class LoginViewController: UIViewController {
                 switch result {
                 case .success(let model):
                     self.loginModel = model
-                    UserCredentialsAndNavigation.shared.saveUser(loginModel: model, username: self.usernameTF.text!)
+                    UserCredentials.shared.saveUser(loginModel: model, username: self.usernameTF.text!)
                     self.animateEverythingOut()
                 case .failure(let err):
                     self.showAlert(title: "Error", message: err.localizedDescription)
@@ -109,32 +109,19 @@ final class LoginViewController: UIViewController {
             self.usernameTF.alpha = 0
         }) { _ in
         }
-        UIView.animate(withDuration: 0.6, animations:  {
+        UIView.animate(withDuration: 0.5, animations:  {
             self.passwordTF.transform = CGAffineTransform(translationX: 0, y: -self.view.bounds.height)
             self.passwordTF.alpha = 0
         }) { _ in
         }
-        UIView.animate(withDuration: 0.9, animations:  {
+        UIView.animate(withDuration: 0.7, animations:  {
             self.loginButton.transform = CGAffineTransform(translationX: 0, y: -self.view.bounds.height)
             self.loginButton.alpha = 0
         }) { _ in
+            UserCredentials.shared.showTabBarVC()
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
-            UserCredentialsAndNavigation.shared.showTabBarVC()
-        }
-        
     }
-    
-    
 
-//    private func saveCredentials(loginModel: LoginModel) {
-//        UserDefaults.standard.set(loginModel.userId, forKey: "userId")
-//        UserDefaults.standard.set(loginModel.token, forKey: "token")
-//        UserDefaults.standard.set(usernameTF.text, forKey: "username")
-//       }
-    
-   
-   
     private func setUpView(){
         navigationItem.title = "Login"
         self.view.backgroundColor = #colorLiteral(red: 0.9921568627, green: 0.8901960784, blue: 0.6549019608, alpha: 1)

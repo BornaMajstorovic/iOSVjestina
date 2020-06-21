@@ -34,7 +34,7 @@ class ScoreTableViewCell: UITableViewCell {
     func configure(withScore score: ScoreCellModel){
         placeLabel.text = String(score.place)
         usernameLabel.text = score.user
-        scoreLabel.text = String(score.score)
+        scoreLabel.text = score.score
     }
     
 }

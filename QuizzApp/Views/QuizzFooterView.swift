@@ -30,12 +30,7 @@ class QuizzFooterView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     @objc func logoutButtonTapped(_ sender: UIButton) {
-//        UserDefaults.standard.removeObject(forKey: "token")
-//        UserDefaults.standard.removeObject(forKey: "userId")
-//        if let appDelegate = UIApplication.shared.delegate as? AppDelegate{
-//            appDelegate.window!.rootViewController = LoginViewController()
-//        }
-        UserCredentialsAndNavigation.shared.deleteUser()
+        UserCredentials.shared.deleteUser()
     }
     
     

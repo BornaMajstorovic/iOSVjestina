@@ -34,13 +34,13 @@ public class Quiz: NSManagedObject {
         }
     }
     
-    class func createFrom(json: [String: Any]) -> Quiz? {
-        guard   let id = json["id"] as? Int,
-                let title = json["title"] as? String,
-                let category = json["category"] as? String,
-                let description = json["description"] as? String?,
-                let level = json["level"] as? Int,
-                let questionsJson = json["questions"] as? [[String: Any]] else {return nil}
+    class func createFrom(from model: QuizModel) -> Quiz? {
+        guard   let id = model.id,
+            let title = model.title,
+            let category = model.category,
+        let description = model.description,
+            let level = model.level,
+            let questions = model.questions else {return nil}
         
         guard let quiz = Quiz.firstOrCreate(withId: id) else {return nil}
         quiz.id = Int64(id)
@@ -48,10 +48,10 @@ public class Quiz: NSManagedObject {
         quiz.level = Int64(level)
         quiz.category = Category(rawValue: category)!.rawValue
         quiz.descript = description
-        quiz.imageUrl = json["image"] as? String
+        quiz.imageUrl = model.image
         
-        questionsJson.forEach { (json) in
-            guard let quest = Question.createFrom(json: json) else{return}
+        questions.forEach { (questionModel) in
+            guard let quest = Question.createFrom(from: questionModel) else{return}
             quiz.addToQuestions(quest)
         }
         

@@ -16,8 +16,6 @@ class QuizTableViewController: UIViewController {
     // MARK: Properties
     private var  viewModel: QuizzesViewModel?
     private var refreshControl: UIRefreshControl!
-    private let cellReuseIdentifier = "cellReuseIdentifier"
-    
     
     // MARK: Lifecycle methods
     override func viewDidLoad() {
@@ -25,12 +23,9 @@ class QuizTableViewController: UIViewController {
         navigationItem.title = "Quizzes"
         setUpTableView()
         setUpViewModel()
-        
     }
     
-    
     // MARK: Class methods
-
     func setUpTableView(){
         tableView.backgroundColor = UIColor.lightGray
         tableView.delegate = self
@@ -41,7 +36,7 @@ class QuizTableViewController: UIViewController {
         refreshControl.addTarget(self, action: #selector(QuizTableViewController.refresh), for: UIControl.Event.valueChanged)
         tableView.refreshControl = refreshControl
         
-        tableView.register(UINib(nibName: "QuizzesTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
+        tableView.register(UINib(nibName: "QuizzesTableViewCell", bundle: nil), forCellReuseIdentifier: Constants.cellReuseIdentifier)
         
         let tableFooterView = QuizzFooterView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50))
         tableView.tableFooterView = tableFooterView
@@ -98,22 +93,18 @@ extension QuizTableViewController: UITableViewDelegate {
         UIView.setAnimationTransition(UIView.AnimationTransition.flipFromLeft, for: (self.navigationController?.view)!, cache: false)
         UIView.commitAnimations()
     }//na tap cella prijedi na quizvc
-    
-    
-   
 }
 
 extension QuizTableViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as? QuizzesTableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellReuseIdentifier, for: indexPath) as? QuizzesTableViewCell {
             if let quiz = viewModel?.quizViewModel(forIndexPath: indexPath){
                 cell.configure(withQuizz: quiz)
             }
             return cell
         }
         return QuizzesTableViewCell()
-        
     } // napravi cell za odredni indexpath
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -124,8 +115,4 @@ extension QuizTableViewController: UITableViewDataSource {
         let category = Category.allCases[section]
         return self.viewModel?.numberOfQuizzes(category: category) ?? 0
     } //broj kvizova u kategoriji
-    
-   
-    
-    
 }

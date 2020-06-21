@@ -20,11 +20,27 @@ class LeaderboardViewModel {
         return quiz?.title ?? ""
     }
     
-    func fetchScores(completion: @escaping ((Result<AllScores, Error>)->Void)){
+    func fetchScores(completion: @escaping ((Result<[ScoreModel], Error>)->Void)){
         let quizService = QuizzesService()
-        guard let quiz = quiz else {return}
-        quizService.fetchScores(quizId: quiz.id) { (res) in
-            completion(res)
+        guard let quiz = quiz, let id = quiz.id else {return}
+        quizService.fetchScores(quizId: id) { (res) in
+            DispatchQueue.main.async {
+                switch res {
+                case .success(let model):
+                    self.quizScores = model.filter{$0.score != nil}.sorted(by: { (m1, m2) -> Bool in
+                        guard let score1 = m1.score, let score2 = m2.score else {return false}
+                        return score1 > score2
+                    })
+                    if let arr = self.quizScores?.prefix(upTo: 20){
+                        self.quizScores = Array(arr)
+                        completion(.success(Array(arr)))
+                    }
+                    
+
+                case .failure( _):
+                    print("err")
+                }
+            }
         }
         
     }
@@ -42,4 +58,5 @@ class LeaderboardViewModel {
     
     
 }
+
 

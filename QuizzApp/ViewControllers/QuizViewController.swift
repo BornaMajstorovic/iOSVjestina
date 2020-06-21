@@ -66,8 +66,7 @@ class QuizViewController: UIViewController {
         let timePassed = Double(Date().timeIntervalSince(startTime))
         let quizService = QuizzesService()
         
-        quizService.sendResult(quizId: quizId, time: timePassed, numOfCorrect: numOfCorrect) { (http) in
-            print("proslo")
+        quizService.sendResult(quizId: quizId, time: timePassed, numOfCorrect: numOfCorrect) { _ in
         }
         
     }
@@ -77,6 +76,8 @@ class QuizViewController: UIViewController {
         let questionWidth = scroolView.frame.width
         let fullWidth = questionWidth*CGFloat(viewModel.numberOfQuestions)
         scroolView.contentSize = CGSize(width: fullWidth, height: scroolView.frame.height)
+        scroolView.isScrollEnabled = true
+        
         
         let arr: [QuestionModel] = viewModel.questions
         for (i, question) in arr.enumerated() {
@@ -86,15 +87,7 @@ class QuizViewController: UIViewController {
             questionView.setupView(with: question)
             scroolView.addSubview(questionView)
         }
-//         viewModel.questions.enumerated().forEach {
-//                   let offset = questionWidth * CGFloat($0)
-//                   let questionView = QuestionViewFromCode(
-//                       frame: CGRect(origin: CGPoint(x: offset, y: 0),
-//                                     size: scroolView.frame.size))
-//            questionView.setupView(with: $1)
-//                   questionView.delegate = self
-//                   scroolView.addSubview(questionView)
-//               }
+
     }
     
     @objc func onTapLeaderboard() {
@@ -109,6 +102,7 @@ extension QuizViewController: QuestionViewDelegate {
         answears.append(isCorrect)
         if answears.count == viewModel?.numberOfQuestions {
             postResults()
+            self.showAlert(title: "Quiz ended", message: "Quiz je zavrsen")
         } else{
             let offset = scroolView.frame.width * CGFloat(answears.count)
             scroolView.setContentOffset(CGPoint(x: offset, y: 0), animated: true)

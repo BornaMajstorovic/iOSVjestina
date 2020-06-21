@@ -9,17 +9,17 @@
 import Foundation
 
 struct ScoreModel: Decodable {
-    let score: Double
-    let username: String?
+    var score: String?
+    var username: String?
 }
-struct AllScores: Decodable {
-    var allScores: [ScoreModel]
-}
-extension ScoreModel: Comparable {
-    static func < (lhs: ScoreModel, rhs: ScoreModel) -> Bool {
-        return lhs.score < rhs.score
-    }
-    static func > (lhs: ScoreModel, rhs: ScoreModel) -> Bool {
-        return lhs.score > rhs.score
-    }
-}
+
+//extension ScoreModel: Comparable {
+//    static func < (lhs: ScoreModel, rhs: ScoreModel) -> Bool {
+//        guard let lhs = lhs, let rhs = rhs else {return false}
+//        return lhs.score < rhs.score
+//    }
+//    static func > (lhs: ScoreModel, rhs: ScoreModel) -> Bool {
+//        guard let lhs = lhs, let rhs = rhs else {return false}
+//        return lhs.score > rhs.score
+//    }
+//}

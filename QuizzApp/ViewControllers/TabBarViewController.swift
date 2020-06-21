@@ -43,7 +43,5 @@ class TabBarViewController: UITabBarController {
         settingsVC.tabBarItem = settingsBarItem
         
         viewControllers = [quizTableNVC, searchNVC, settingsVC]
-        
-        
     }
 }

@@ -11,4 +11,6 @@ import Foundation
 final class Constants {
     //dodat endPointove i reuse identifiare
     static let baseUrl = "https://iosquiz.herokuapp.com/api"
+    static let cellReuseIdentifier = "cellReuseIdentifier"
+
 }

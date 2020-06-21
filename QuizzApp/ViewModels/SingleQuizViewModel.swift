@@ -32,6 +32,6 @@ class SingleQuizViewModel  {
         return quiz?.questions ?? []
     }
     var numberOfQuestions: Int {
-        return quiz?.questions.count ?? 0
+        return quiz?.questions?.count ?? 0
     }
 }

@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 
 struct QuizModel: Decodable{
-    let id: Int
-    let title: String
-    let description: String
-    let category: String
-    let level: Int
+    let id: Int?
+    let title: String?
+    let description: String?
+    let category: String?
+    let level: Int?
     let image: String?
-    let questions: [QuestionModel]
+    let questions: [QuestionModel]?
 }
 
 struct AllQuizzes: Decodable {

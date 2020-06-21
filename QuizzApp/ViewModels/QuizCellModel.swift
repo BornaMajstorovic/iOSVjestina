@@ -15,9 +15,17 @@ struct QuizCellModel {
     let imageUrl: URL?
     
     init(quiz: QuizModel) {
-        self.title = quiz.title
-        self.description = quiz.description
-        self.level = String(repeating: "*", count: quiz.level)
-        self.imageUrl = URL(string: quiz.image ?? "")
-    }
+        if let title = quiz.title,
+            let description = quiz.description,
+            let level = quiz.level {
+            self.title = title
+            self.description = description
+            self.level = String(repeating: "*", count: level)
+            self.imageUrl = URL(string: quiz.image ?? "")
+        } else {
+            self.title = "null"
+            self.description = "null"
+            self.level = String(repeating: "*", count: 0)
+            self.imageUrl = URL(string: quiz.image ?? "")
+        }}
 }

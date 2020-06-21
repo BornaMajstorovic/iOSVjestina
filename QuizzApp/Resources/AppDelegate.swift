@@ -12,31 +12,19 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let loginVC = LoginViewController()
-    let tabBarVC = TabBarViewController()
-   
     
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         window = UIWindow(frame: UIScreen.main.bounds)
+        
         let showVCfunc: (UIViewController)->Void = showVC
-        
-//        if let _ = UserDefaults.standard.string(forKey: "token"){
-//            showVC(vc: tabBarVC)
-//        } else {
-//            showVC(vc: loginVC)
-//        }
-        //uvijek ode na login
-        UserCredentialsAndNavigation.shared.isUserLoggedIn(function: showVCfunc)
-        
+        UserCredentials.shared.isUserLoggedIn(function: showVCfunc)
        
         return true
     }
 
     private func showVC(vc: UIViewController)->Void{
-        let nvc = UINavigationController(rootViewController: vc)
-        window?.rootViewController = nvc
+        window?.rootViewController = vc
         window?.makeKeyAndVisible()
     }
 }

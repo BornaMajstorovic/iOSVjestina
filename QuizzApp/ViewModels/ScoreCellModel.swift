@@ -9,9 +9,9 @@
 import Foundation
 
 struct ScoreCellModel {
-    let user: String
-    let score: Double
-    let place: Int
+    var user: String?
+    var score: String?
+    var place: Int
     
     
     init(skor: ScoreModel, place: Int) {

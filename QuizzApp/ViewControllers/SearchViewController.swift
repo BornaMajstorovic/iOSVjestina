@@ -17,7 +17,7 @@ class SearchViewController: UIViewController {
     // MARK: Properties
     private var  viewModel: QuizzesViewModel?
     private var refreshControl: UIRefreshControl!
-    private let cellReuseIdentifier = "cellReuseIdentifier"
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +42,7 @@ class SearchViewController: UIViewController {
         refreshControl.addTarget(self, action: #selector(QuizTableViewController.refresh), for: UIControl.Event.valueChanged)
         tableView.refreshControl = refreshControl
         
-        tableView.register(UINib(nibName: "QuizzesTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
+        tableView.register(UINib(nibName: "QuizzesTableViewCell", bundle: nil), forCellReuseIdentifier: Constants.cellReuseIdentifier)
         
         let tableFooterView = QuizzFooterView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50))
         tableView.tableFooterView = tableFooterView
@@ -109,7 +109,7 @@ extension SearchViewController: UITableViewDelegate {
 extension SearchViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as? QuizzesTableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellReuseIdentifier, for: indexPath) as? QuizzesTableViewCell {
             if let quiz = viewModel?.quizViewModel(forIndexPath: indexPath){
                 cell.configure(withQuizz: quiz)
             }
