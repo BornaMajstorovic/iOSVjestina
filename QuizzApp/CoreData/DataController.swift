@@ -9,6 +9,11 @@
 import Foundation
 import CoreData
 
+//Sto se tice Core Date, ja sam napravio prema onom predlosku sto smo dobili od profesora,
+//no kako nije bilo nikakvih uputa, nisam uspio do kraja natjerat da radi, tako da sam i search bar i ostatak projekta
+//radio samo preko stalnog dohvacanja podataka preko mreze, createFrom metode sam promjenio da primaju moje decodable modele, pa u servisu
+//za dohvacanje kvizova uspio dodat quizove i questione u ta core data modele, no nisam uspio dalje spojit te modele u kod
+
 class DataController {
     
     static let shared = DataController()

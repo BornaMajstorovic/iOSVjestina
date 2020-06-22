@@ -15,7 +15,7 @@ class SearchViewController: UIViewController {
     
     
     // MARK: Properties
-    private var  viewModel: QuizzesViewModel?
+    private var  viewModel: QuizzesViewModel? 
     private var refreshControl: UIRefreshControl!
 
     
@@ -23,9 +23,8 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = "Search"
         searchBar.barTintColor = #colorLiteral(red: 0.5328530073, green: 0.402020514, blue: 0.6997897029, alpha: 1)
-        //ne radi??
         searchBar.tintColor = #colorLiteral(red: 0.9703171849, green: 0.7819978595, blue: 0.3436401486, alpha: 1)
-        
+        searchBar.delegate = self
         setUpTableView()
         setUpViewModel()
     }
@@ -51,6 +50,7 @@ class SearchViewController: UIViewController {
     
     func setUpViewModel()  {
         viewModel = QuizzesViewModel()
+        // MARK: dohvacanje preko api-a
         viewModel?.fetchQuizzes(completion: { (result) in
             DispatchQueue.main.async {
                 switch result{
@@ -62,6 +62,10 @@ class SearchViewController: UIViewController {
                 }
             }
         })
+        // MARK: dohavacanje preko CD
+//        viewModel?.searchQuizzes(key: "")
+//        self.refresh()
+        
     }
     
     @objc func refresh() {
@@ -131,8 +135,10 @@ extension SearchViewController: UITableViewDataSource {
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
+        self.viewModel?.searchQuizzes(key: searchText)
+        self.refresh()
     }
+    
 }
 
 

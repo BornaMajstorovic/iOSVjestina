@@ -19,7 +19,7 @@ public class Question: NSManagedObject {
     static func firstOrCreate(withId id: Int) -> Question? {
         let context = DataController.shared.persistentContainer.viewContext
         let request: NSFetchRequest<Question> = Question.fetchRequest()
-        request.predicate = NSPredicate(format: "id = %@", id)
+        request.predicate = NSPredicate(format: "id = %d", id)
         request.returnsObjectsAsFaults = false
         
         do {
@@ -35,33 +35,25 @@ public class Question: NSManagedObject {
         }
     }
     
-    //    static func createFrom(json: [String: Any]) -> Question? {
-    //        guard   let id = json["id"] as? Int,
-    //                let question = json["question"] as? String,
-    //                let answers = json["answers"] as? [String],
-    //                let correctAnswer = json["correct_answer"] as? Int else {return nil}
-    //
-    //        guard let quest = Question.firstOrCreate(withId: id) else {return nil}
-    //        quest.id = Int64(id)
-    //        quest.question = question
-    //        quest.answears = answers
-    //        quest.correctAnswear = Int64(correctAnswer)
-    //        return quest
-    //
-    //    }
     static func createFrom(from model: QuestionModel) -> Question? {
-        guard  let id = model.id,
-            let question = model.question,
-            let answers = model.answers,
-            let correctAnswer = model.correctAnswer  else {return nil}
+        guard   let id = model.id,
+                let question = model.question,
+                let answers = model.answers,
+                let correctAnswer = model.correctAnswer  else {return nil}
         
         guard let questionn = Question.firstOrCreate(withId: id) else {return nil}
         questionn.id = Int64(id)
         questionn.question = question
         questionn.answears = answers
         questionn.correctAnswear = Int64(correctAnswer)
-        return questionn
-        
+        do {
+            let context = DataController.shared.persistentContainer.viewContext
+            try context.save()
+            return questionn
+        } catch let err{
+            print(err.localizedDescription)
+        }
+        return nil
     }
 }
 

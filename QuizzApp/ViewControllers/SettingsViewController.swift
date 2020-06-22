@@ -38,9 +38,9 @@ class SettingsViewController: UIViewController {
         usernameLabel.text = "Username: "
         self.view.backgroundColor = #colorLiteral(red: 0.9921568627, green: 0.8901960784, blue: 0.6549019608, alpha: 1)
         usernameValueLabel.text = UserDefaults.standard.string(forKey: "username")
+        UIButton.styleButton(button: logoutButton)
         logoutButton.layer.cornerRadius = 0.5 * logoutButton.frame.width
-        logoutButton.backgroundColor = #colorLiteral(red: 0.5328530073, green: 0.402020514, blue: 0.6997897029, alpha: 1)
-        logoutButton.setTitleColor(#colorLiteral(red: 0.9703171849, green: 0.7819978595, blue: 0.3436401486, alpha: 1), for: .normal)
+        
         
     }
     

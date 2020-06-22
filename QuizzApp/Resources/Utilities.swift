@@ -14,7 +14,7 @@ extension UIButton {
     static func styleButton(button: UIButton) {
         button.backgroundColor = #colorLiteral(red: 0.5328530073, green: 0.402020514, blue: 0.6997897029, alpha: 1)
         button.layer.cornerRadius = 20
-        button.tintColor = #colorLiteral(red: 0.9703171849, green: 0.7819978595, blue: 0.3436401486, alpha: 1)
+        button.setTitleColor(#colorLiteral(red: 0.9703171849, green: 0.7819978595, blue: 0.3436401486, alpha: 1), for: .normal)
     }
 }
 extension UITextField {
@@ -46,5 +46,10 @@ extension UILabel {
     }
 }
 extension String{
-    
+    static func roundUpThatString(string: String) -> String{
+        if let number = Double(string) {
+            return String(Double(round(1000*number)/1000))
+        }
+        return "nan"
+    }
 }

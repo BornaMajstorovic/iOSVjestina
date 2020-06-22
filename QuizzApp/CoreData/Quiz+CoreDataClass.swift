@@ -19,7 +19,7 @@ public class Quiz: NSManagedObject {
     class func firstOrCreate(withId id: Int)-> Quiz?{
         let context = DataController.shared.persistentContainer.viewContext
         let request: NSFetchRequest<Quiz> = Quiz.fetchRequest()
-        request.predicate = NSPredicate(format: "id = %@", id)
+        request.predicate = NSPredicate(format: "id = %d", id)
         request.returnsObjectsAsFaults = false
         do {
             let quizzes = try context.fetch(request)
@@ -36,11 +36,11 @@ public class Quiz: NSManagedObject {
     
     class func createFrom(from model: QuizModel) -> Quiz? {
         guard   let id = model.id,
-            let title = model.title,
-            let category = model.category,
-        let description = model.description,
-            let level = model.level,
-            let questions = model.questions else {return nil}
+                let title = model.title,
+                let category = model.category,
+                let description = model.description,
+                let level = model.level,
+                let questions = model.questions else {return nil}
         
         guard let quiz = Quiz.firstOrCreate(withId: id) else {return nil}
         quiz.id = Int64(id)
@@ -59,8 +59,8 @@ public class Quiz: NSManagedObject {
             let context = DataController.shared.persistentContainer.viewContext
             try context.save()
             return quiz
-        } catch {
-            print("Failed saving")
+        } catch let err {
+            print(err.localizedDescription)
         }
         return nil
     }

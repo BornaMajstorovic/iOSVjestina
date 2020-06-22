@@ -23,6 +23,14 @@ class QuizzesService {
             if let data = data {
                 do {
                     let model = try JSONDecoder().decode(AllQuizzes.self, from: data)
+                    //core data stuff
+                    let quizArr = model.quizzes
+                    var quizzes: [Quiz] = []
+                    quizArr.forEach {
+                        if let quiz = Quiz.createFrom(from: $0) {
+                            quizzes.append(quiz)
+                        }
+                    }
                     completion(.success(model))
                 } catch let decodeErr {
                     completion(.failure(decodeErr))

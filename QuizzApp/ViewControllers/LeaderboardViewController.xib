@@ -17,11 +17,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="966"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2jI-6s-nDb">
-                    <rect key="frame" x="0.0" y="94" width="414" height="838"/>
+                    <rect key="frame" x="0.0" y="94" width="414" height="808"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WAf-j7-5G0">
@@ -64,7 +64,7 @@
                 <constraint firstItem="WAf-j7-5G0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="EtC-Bl-2oa"/>
                 <constraint firstItem="WAf-j7-5G0" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="NVj-ZM-dcY"/>
                 <constraint firstItem="2jI-6s-nDb" firstAttribute="top" secondItem="WAf-j7-5G0" secondAttribute="bottom" id="ST8-dC-n9e"/>
-                <constraint firstItem="2jI-6s-nDb" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="byZ-tv-ek8"/>
+                <constraint firstItem="2jI-6s-nDb" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="40" id="byZ-tv-ek8"/>
                 <constraint firstItem="WAf-j7-5G0" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="eON-ti-5op"/>
                 <constraint firstItem="2jI-6s-nDb" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="fAc-Ul-gFA"/>
             </constraints>

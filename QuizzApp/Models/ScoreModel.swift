@@ -13,13 +13,13 @@ struct ScoreModel: Decodable {
     var username: String?
 }
 
-//extension ScoreModel: Comparable {
-//    static func < (lhs: ScoreModel, rhs: ScoreModel) -> Bool {
-//        guard let lhs = lhs, let rhs = rhs else {return false}
-//        return lhs.score < rhs.score
-//    }
-//    static func > (lhs: ScoreModel, rhs: ScoreModel) -> Bool {
-//        guard let lhs = lhs, let rhs = rhs else {return false}
-//        return lhs.score > rhs.score
-//    }
-//}
+extension ScoreModel: Comparable {
+    static func < (lhs: ScoreModel, rhs: ScoreModel) -> Bool {
+        guard let lhs = Double(lhs.score!), let rhs = Double(rhs.score!) else {return false}
+        return lhs < rhs
+    }
+    static func > (lhs: ScoreModel, rhs: ScoreModel) -> Bool {
+        guard let lhs = Double(lhs.score!), let rhs = Double(rhs.score!) else {return false}
+        return lhs > rhs
+    }
+}

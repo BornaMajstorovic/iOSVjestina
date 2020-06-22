@@ -49,15 +49,15 @@ final class LoginViewController: UIViewController {
         let loginService = LoginService()
         guard   let username = usernameTF.text,
                 let password = passwordTF.text  else {print("textfildovi prazni"); return}
-        loginService.loginUserWith(username: username, password: password) { (result) in
+        loginService.loginUserWith(username: username, password: password) { [weak self](result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let model):
-                    self.loginModel = model
-                    UserCredentials.shared.saveUser(loginModel: model, username: self.usernameTF.text!)
-                    self.animateEverythingOut()
+                    self?.loginModel = model
+                    UserCredentials.shared.saveUser(loginModel: model, username: self?.usernameTF.text! ?? "")
+                    self?.animateEverythingOut()
                 case .failure(let err):
-                    self.showAlert(title: "Error", message: err.localizedDescription)
+                    self?.showAlert(title: "Error", message: err.localizedDescription)
                 }
             }
         }

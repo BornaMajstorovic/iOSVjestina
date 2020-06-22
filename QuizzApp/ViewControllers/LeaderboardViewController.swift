@@ -18,6 +18,7 @@ class LeaderboardViewController: UIViewController {
     private var viewModel: LeaderboardViewModel?
     private var refreshControl: UIRefreshControl!
     private let cellReuseIdentifier = "scoreCellReuseIdentifier"
+    
     // MARK: Lifecycle methods
 
     override func viewDidLoad() {
@@ -57,7 +58,7 @@ class LeaderboardViewController: UIViewController {
         viewModel?.fetchScores(completion: { (res) in
             DispatchQueue.main.async {
                 switch res{
-                case .success(let _):
+                case .success(_):
                     self.refresh()
                 case .failure(let err):
                     self.showAlert(title: "errror", message: err.localizedDescription)

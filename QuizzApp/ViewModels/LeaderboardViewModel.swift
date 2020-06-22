@@ -27,10 +27,7 @@ class LeaderboardViewModel {
             DispatchQueue.main.async {
                 switch res {
                 case .success(let model):
-                    self.quizScores = model.filter{$0.score != nil}.sorted(by: { (m1, m2) -> Bool in
-                        guard let score1 = m1.score, let score2 = m2.score else {return false}
-                        return score1 > score2
-                    })
+                    self.quizScores = model.filter{$0.score != nil}.sorted{$0 > $1}
                     if let arr = self.quizScores?.prefix(upTo: 20){
                         self.quizScores = Array(arr)
                         completion(.success(Array(arr)))

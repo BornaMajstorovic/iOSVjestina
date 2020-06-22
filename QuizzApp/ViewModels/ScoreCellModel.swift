@@ -16,7 +16,7 @@ struct ScoreCellModel {
     
     init(skor: ScoreModel, place: Int) {
         self.user = skor.username ?? "strangerDanger"
-        self.score = skor.score
+        self.score = String.roundUpThatString(string: skor.score ?? "")
         self.place = place
     }
 }
