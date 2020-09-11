@@ -87,7 +87,6 @@ class QuizViewController: UIViewController {
             questionView.setupView(with: question)
             scroolView.addSubview(questionView)
         }
-
     }
     
     @objc func onTapLeaderboard() {

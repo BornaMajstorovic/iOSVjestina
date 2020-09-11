@@ -107,7 +107,7 @@ class QuestionViewFromCode: UIView {
         answers.forEach { (btn) in
             btn.isEnabled = false
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
             self.delegate?.answeardQuestions(isCorrect: isCorrectAnswear)
         })
     }

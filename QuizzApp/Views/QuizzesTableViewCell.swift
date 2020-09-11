@@ -40,7 +40,7 @@ class QuizzesTableViewCell: UITableViewCell {
         quizDescription.text = quiz.description
         quizzDifficulty.text = quiz.level
         guard let imageUrl = quiz.imageUrl else {return}
-        quizImage.kf.setImage(with: imageUrl)
+        //quizImage.kf.setImage(with: imageUrl)
     }
     
 }

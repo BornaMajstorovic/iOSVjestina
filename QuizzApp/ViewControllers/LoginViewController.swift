@@ -78,7 +78,6 @@ final class LoginViewController: UIViewController {
             self.titleLabel.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
         }) { _ in
         }
-
         UIView.animate(withDuration: 0.3, animations:  {
             self.usernameTF.transform = CGAffineTransform.identity
             self.usernameTF.alpha = 1

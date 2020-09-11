@@ -46,10 +46,10 @@ extension UILabel {
     }
 }
 extension String{
-    static func roundUpThatString(string: String) -> String{
+    static func roundUpThatString(string: String) -> String?{
         if let number = Double(string) {
             return String(Double(round(1000*number)/1000))
         }
-        return "nan"
+        return nil
     }
 }

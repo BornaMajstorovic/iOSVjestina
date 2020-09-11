@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class SearchViewController: UIViewController {
     // MARK: Outlets
     @IBOutlet weak var searchBar: UISearchBar!
@@ -18,6 +19,7 @@ class SearchViewController: UIViewController {
     private var  viewModel: QuizzesViewModel? 
     private var refreshControl: UIRefreshControl!
 
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -140,6 +142,5 @@ extension SearchViewController: UISearchBarDelegate {
     }
     
 }
-
 
 

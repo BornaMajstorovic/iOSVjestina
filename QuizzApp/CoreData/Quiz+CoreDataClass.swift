@@ -64,8 +64,5 @@ public class Quiz: NSManagedObject {
         }
         return nil
     }
-    
-        
-
 }
 
